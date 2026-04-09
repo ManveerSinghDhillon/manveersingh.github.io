@@ -1,0 +1,8951 @@
+/* =========================
+   ROOT / THEME
+   ========================= */
+:root{
+  --brand: #1d4079;
+  --brand-2: #3B82F6;
+  --accent: #5fb0bf;
+
+  --bg: #fff9ee;
+  --bg-soft: #fff9ee;
+
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: 1.7;
+
+  /* Typography scale (ONLY these sizes) */
+  --h1: clamp(40px, 5vw, 56px);
+  --h2: 32px;
+  --h3: 22px;
+  --body: 18px;
+  --small: 14px;
+
+  --container: 900px;
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.10);
+  --shadow-soft: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   BASE / GLOBAL
+   ========================= */
+*{ box-sizing: border-box; }
+/* =========================
+   ROOT / THEME
+   ========================= */
+:root{
+  --brand: #1d4079;
+  --brand-2: #3B82F6;
+  --accent: #5fb0bf;
+
+  --bg: #fff9ee;
+  --bg-soft: #fff9ee;
+
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: 1.7;
+
+  /* Typography scale (ONLY these sizes) */
+  --h1: clamp(40px, 5vw, 56px);
+  --h2: 32px;
+  --h3: 22px;
+  --body: 18px;
+  --small: 14px;
+
+  --container: 900px;
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.10);
+  --shadow-soft: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   BASE / GLOBAL
+   ========================= */
+*{ box-sizing: border-box; }
+
+body{
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: var(--line);
+}
+
+/* Global typography */
+h1{ font-size: var(--h1); line-height: 1.1; margin: 0 0 16px; }
+h2{ font-size: var(--h2); margin: 0 0 12px; }
+h3{ font-size: var(--h3); margin: 0 0 10px; }
+p{ font-size: var(--body); margin: 0 0 16px; color: var(--ink); }
+small{ font-size: var(--small); color: var(--muted); }
+
+a{ color: inherit; }
+img{ max-width: 100%; height: auto; display:block; }
+
+/* Layout helpers */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.lead{
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* =========================
+   NAV (ALL PAGES) — CLEAN
+   ========================= */
+
+
+/* inner row */
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0px; /* ✅ controls how left the logo is */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo{
+  width: 120px;
+  height: auto;
+  display: block;
+  transition: width .25s ease;
+}
+
+/* Capsule menu */
+.menu{
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  background: var(--brand-2);
+  padding: 18px 44px;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  transition: padding .25s ease;
+}
+
+.nav .menu a{
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 26px;
+  color: #fff;
+  position: relative;
+  padding: 6px 2px;
+}
+
+/* underline */
+.nav .menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-10px;
+  width:0;
+  height:4px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+.nav .menu a:hover::after,
+.nav .menu a.active::after{
+  width: 100%;
+}
+
+/* global shrink */
+.nav.shrink{
+  padding: 10px 0;
+}
+
+.nav.shrink .menu{
+  padding: 10px 28px;
+}
+
+.nav.shrink .menu a{
+  font-size: 16px;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .nav-inner{ flex-direction: column; gap: 14px; }
+  .menu{ width: 100%; justify-content: center; padding: 14px 20px; gap: 18px; flex-wrap: wrap; }
+  .nav .menu a{ font-size: 18px; }
+}
+
+.nav{
+  transition: padding .25s ease, transform .25s ease;
+}
+
+.nav-logo{
+  transition: width .25s ease;
+}
+
+.menu{
+  transition: padding .25s ease;
+}
+
+
+
+body{
+  padding-top: 160px;   /* adjust if needed */
+}
+
+/* ===== FINAL NAV + PAGE SPACING (KEEP ONLY THIS) ===== */
+.nav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--bg-soft);
+}
+
+/* pushes all pages below the fixed nav */
+body{
+  padding-top: 140px; /* change to 120 or 150 if needed */
+}
+/* =========================
+   NAV — FINAL (put at VERY bottom)
+   ========================= */
+
+:root{
+  --nav-h: 110px; /* tweak if needed */
+}
+
+/* push page content below fixed nav */
+body{
+  padding-top: var(--nav-h) !important;
+}
+
+/* fixed bar */
+.nav{
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  z-index: 9999 !important;
+
+  background: var(--bg-soft);  /* same cream background */
+  padding: 14px 0 !important;  /* smaller so it doesn't cover hero */
+}
+
+/* row */
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px; /* controls logo left spacing */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* logo size */
+.nav-logo{
+  width: 96px;     /* smaller so it doesn’t look huge */
+  height: auto;
+}
+
+/* menu pill */
+.menu{
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  padding: 16px 36px;     /* smaller pill */
+  border-radius: 999px;
+  background: var(--brand-2);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+
+.nav .menu a{
+  font-size: 22px;        /* smaller text */
+  font-weight: 800;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  :root{ --nav-h: 140px; } /* nav becomes taller when stacked */
+
+  .nav-inner{
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .menu{
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 14px 18px;
+  }
+
+  .nav .menu a{
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   HOME HERO (index.html)
+   ========================= */
+
+.hero-inner{
+  display: grid;
+  grid-template-columns: 1fr;   /* ✅ single column */
+     gap: 22px;
+  align-items: start;
+}
+.hero-logo{ width: 180px; } /* slightly smaller = cleaner */
+.hero-logo-wrap{ margin-left: 0; } /* remove negative margin */
+
+.hero-content p{
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 52ch;
+}
+/* =========================
+   HOME HERO UPGRADES
+   ========================= */
+
+/* skills strip */
+.skill-strip{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 14px 0 18px;
+}
+
+/* skill pills */
+.skill-strip li{
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(59,130,246,0.35);
+  background: #fff;
+  color: #0f172a;
+  transition: all 0.25s ease;
+}
+
+/* hover animation */
+.skill-strip li:hover{
+  background: #ffb678;  /* orange */
+  color: #ffffff;       /* dark text (better contrast than white) */
+  transform: scale(1.04);
+  box-shadow: 0 10px 22px rgba(255,182,120,0.35);
+}
+
+/* buttons row */
+.hero-actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* secondary button */
+.btn-ghost{
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.18);
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+}
+
+/* mobile align */
+@media (max-width: 768px){
+  .skill-strip{ justify-content: center; }
+  .hero-actions{ justify-content: center; }
+}
+/* Buttons (global) */
+.btn{
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,0.10);
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.btn-primary{
+  background: var(--brand-2);
+  color: var(--ink);
+  border-color: rgba(0,0,0,0.0);
+}
+
+/* Base button */
+.btn{
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,0.10);
+  transition: 
+    background0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.25s ease;
+}
+
+/* Primary button */
+.btn-primary{
+  background: var(--brand-2);
+  color: #0f172a;
+  border: none;
+}
+
+/* Primary hover */
+.btn-primary:hover{
+  border: 1px solid rgba(59,130,246,0.35);
+  color: #ffffff;
+  transform: scale(1.04);
+  box-shadow: 0 12px 26px rgba(255,182,120,0.35);
+}
+
+/* Ghost button */
+.btn-ghost{
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.18);
+  color: #37435f;
+}
+
+/* Ghost hover */
+.btn-ghost:hover{
+  background: #ffb678;
+border: 1px solid rgba(59,130,246,0.35);
+  color: #ffffff;
+  transform: scale(1.04);
+  box-shadow: 0 12px 26px rgba(255,182,120,0.35);
+}
+/* ===== Scroll reveal animations ===== */
+.reveal{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* images reveal */
+.reveal-img{
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition: opacity .8s ease, transform .8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-img.is-visible{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* hover effect for images */
+.article-images img{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.article-images img:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal-img{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+.hero-load{
+  animation: heroIn .8s ease both;
+}
+
+@keyframes heroIn{
+  from{ opacity: 0; transform: translateY(18px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+/* Mobile hero */
+@media (max-width: 768px){
+  .hero-inner{
+    grid-template-columns: 1fr;
+    text-align:center;
+    gap: 24px;
+  }
+  .hero-logo-wrap{ margin-left: 0; }
+  .hero-logo{ margin: 0 auto; }
+}
+     
+
+/* ===== HOME/ABOUT HERO DECOR ONLY ===== */
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; /* behind hero content */
+}
+
+.hero-decor img{
+  position: absolute;
+  max-width: none;
+  height: auto;
+  opacity: 0.22;
+}
+
+/* hero content above shapes */
+.hero .container{
+  position: relative;
+  z-index: 2;
+}
+
+/* positions */
+.hero-decor .hero-shape-rect{
+  right: -160px;
+  top: 160px;
+  width: 640px;
+}
+
+.hero-decor .hero-shape-polygon{
+  left: 55%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  width: 560px;
+}
+
+.hero-decor .hero-shape-ellipse{
+  left: 45%;
+  bottom: -360px;
+  transform: translateX(-50%);
+  width: 900px;
+}
+
+body{
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-decor{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+nav, main, footer{
+  position: relative;
+  z-index: 1;
+}
+
+.page-decor .shape{
+  position: absolute;
+  height: auto;
+  max-width: none;
+  opacity: 0.16;
+}
+
+/* positions */
+.page-decor .shape-polygon{
+  width: 520px;
+  left: -140px;
+  top: -60px;
+}
+
+.page-decor .shape-rect{
+  width: 680px;
+  left: 56%;
+  top: 56%;
+  transform: translate(-50%, -50%);
+}
+
+.page-decor .shape-ellipse{
+  width: 520px;
+  left: auto !important;
+  right: -220px !important;  /* move to right */
+  bottom: -220px;
+  opacity: 60;
+}
+
+/* =========================
+   FOOTER (ALL PAGES)
+   ========================= */
+.footer{
+  background: var(--brand-2);
+  color: var(--ink);
+  text-align:center;
+  padding: 18px;
+  margin-top: 60px;
+  border-top: 1px solid #e5e7eb;
+  opacity: 0.95;
+}
+.footer{
+  position: relative;
+  z-index: 1;
+}
+/* =========================
+   HOME ARTICLES (index.html)
+   ========================= */
+.article{
+  max-width: var(--container);
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.article h2{
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.article p{
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.article-images{
+  display:flex;
+  justify-content:center;
+  margin: 20px 0;
+}
+
+.article-images img{
+  width: 90%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.article a{
+  color: var(--brand-2);
+  font-weight: 700;
+  text-decoration:none;
+}
+.article a:hover{ text-decoration: underline; }
+
+/* =========================
+   WORK PAGE PROJECT CARDS (work.html)
+   ========================= */
+.project-feature{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items:center;
+  padding: 32px;
+  border: 3px solid #8fb7ff;
+  border-radius: 26px;
+  background: #fff9ee;
+  margin-top: 40px;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-kicker{
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #f39a4a;
+  margin: 0 0 10px;
+}
+
+.project-title{
+  font-size: 56px;
+  line-height: 1;
+  margin: 0 0 16px;
+}
+
+.project-desc{
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 52ch;
+  margin: 0 0 18px;
+  color: #2f3b4a;
+}
+
+/* Tags list */
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px 18px;
+  padding: 0;
+  margin: 0 0 26px;
+  list-style: none;
+  color: #2f3b4a;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.project-tags li::before{
+  content:"•";
+  margin-right: 8px;
+  color:#8fb7ff;
+}
+
+/* Project button */
+.project-btn{
+  display:inline-block;
+  padding: 14px 24px;
+  border-radius: 16px;
+  background:#ffb678;
+  color:#fff;
+  font-weight: 900;
+  text-decoration:none;
+  font-size: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  transition: transform .15s ease, opacity .15s ease;
+}
+.project-btn:hover{ transform: translateY(-1px); opacity: .95; }
+
+.project-feature__media{
+  background: rgba(0,0,0,.06);
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.project-feature__media img{
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 18px;
+}
+
+/* Work page responsive */
+@media (max-width: 900px){
+  .project-feature{ grid-template-columns: 1fr; }
+  .project-title{ font-size: 44px; }
+}
+
+/* =========================
+   WORK PAGE: FIGMA LINKS (work.html)
+   ========================= */
+.prototype-section{
+  margin-top: 60px;
+  padding: 20px 0;
+  border-top: 2px solid #e5e7eb;
+  position: relative;
+  z-index: 10;
+}
+
+.figma-links{
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.figma-links a{
+  display:block;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  box-shadow: var(--shadow-soft);
+  color: var(--brand);
+  text-decoration:none;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  transition: transform .15s ease;
+}
+.figma-links a:hover{ transform: translateY(-1px); text-decoration: underline; }
+
+/* =========================
+   VIDEO + DOWNLOAD LIST (work.html)
+   ========================= */
+.project-card{
+  max-width:800px;
+  margin:24px auto 0;
+  background:#f9fafb;
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.project-card img{ width:100%; border-radius:12px; }
+
+.project-card figcaption{
+  margin-top:10px;
+  font-size:14px;
+  font-weight:700;
+  color:#334155;
+  text-align:center;
+}
+
+.download-list{
+  list-style:none;
+  padding:0;
+  max-width:600px;
+  margin:20px auto 0;
+}
+
+.download-list li{
+  background:#f9fafb;
+  padding:14px 18px;
+  border-radius:12px;
+  margin-bottom:12px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.06);
+}
+
+.work-video{
+  display:block;
+  width:100%;
+  max-width:900px;
+  margin:20px auto 0;
+  border-radius:12px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18);
+}
+
+/* =========================
+   CASE STUDY HERO (pinpal.html)
+   ========================= */
+.case-hero{
+  background: var(--bg-soft);
+  padding: 64px 0 46px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.case-hero__inner{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.case-hero__kicker{
+  font-weight: 900;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.case-hero__title{
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 1;
+  margin: 0 0 22px;
+}
+
+.case-hero__meta{
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 16px;
+  max-width: 260px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 18px;
+}
+
+.case-hero__metaTitle{
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.case-hero__metaValue{
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.case-hero__btn{
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: var(--brand-2);
+  color: var(--ink);
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transition: transform .15s ease, opacity .15s ease;
+}
+.case-hero__btn:hover{ transform: translateY(-1px); opacity: .95; }
+
+.case-hero__frame{
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.case-hero__frame img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Case study responsive */
+@media (max-width: 900px){
+  .case-hero__inner{ grid-template-columns: 1fr; }
+  .case-hero__frame{ order: -1; }
+}
+
+/* =========================
+   ABOUT PAGE 
+   ========================= */
+
+/* Side-by-side images container */
+.about-images{
+  max-width: 900px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* Each image block */
+.about-images .image-item{
+  max-width: 320px;
+  text-align: center;
+}
+
+/* Images themselves */
+.about-images .image-item img{
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+/* ARROWS */
+.arrow-right,
+.arrow-down{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--brand);
+  opacity: 1;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* Arrow symbols */
+.arrow-right::before{ content:"→"; }
+.arrow-down::before{ content:"↓"; }
+
+/* Positioning */
+.arrow-right{
+  flex: 0 0 auto;
+  margin: 0 12px;
+}
+
+.arrow-down{
+  margin: 24px auto 20px;
+}
+
+/* Survey section (bottom image) */
+.process-bottom{
+  max-width: 620px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+/* Survey images */
+.process-bottom img{
+  width: 100%;
+  max-width: 520px;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+/* Caption text */
+.process-bottom .caption,
+.about-images .caption{
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+/* Mobile: stack images + swap arrows */
+@media (max-width: 768px){
+  .about-images{
+    flex-direction:column;
+    gap: 18px;
+  }
+
+  .about-images .image-item{
+    max-width: 520px;
+  }
+
+  .about-images .image-item img{
+    max-width: 520px;
+  }
+
+  .arrow-right{
+    display:none;
+  }
+
+  .arrow-down{
+    margin: 10px 0 24px;
+  }
+}
+
+/* About page logo smaller only */
+.about-hero .about-logo{
+  width: 140px;
+  max-width: 140px;
+  height: auto;
+}
+/* =========================
+   Arrow Animations
+   ========================= */
+
+/* Right arrow slide animation */
+@keyframes slideArrow {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+.arrow-right {
+  animation: slideArrow 1.5s ease-in-out infinite;
+}
+
+/* Down arrow bounce animation */
+@keyframes bounceArrow {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+.arrow-down {
+  animation: bounceArrow 1.5s ease-in-out infinite;
+}
+/* =========================
+   Image Entry Animation
+   ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-images .image-item,
+.process-bottom {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Stagger timing */
+.about-images .image-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.about-images .image-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.process-bottom {
+  animation-delay: 0.6s;
+}
+.about-images .image-item img,
+.process-bottom img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.about-images .image-item img:hover,
+.process-bottom img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-images .image-item,
+  .process-bottom,
+  .arrow-right,
+  .arrow-down {
+    animation: none;
+    transform: none;
+  }
+}
+/* VALUES SECTION (FINAL - matches your theme) */
+.about-values{
+  padding: 100px 0;
+}
+
+.values-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.value-card{
+  background: rgba(255,255,255,0.55);
+  border: 2px solid rgba(59,130,246,0.22);
+  padding: 56px 36px;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.value-card:hover{
+  transform: translateY(-8px);
+  border-color: rgba(255,182,120,0.75);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.10);
+}
+
+.value-icon{
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.12);
+  border: 2px solid rgba(59,130,246,0.18);
+  font-size: 28px;
+}
+
+.value-card h3{
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 900;
+  color: var(--brand);
+  margin-bottom: 18px;
+}
+
+.value-card p{
+  font-size: 18px;
+  line-height: 1.7;
+  color: #3c4a5c;
+  max-width: 30ch;
+  margin: 0 auto;
+}
+/* CTA SECTION */
+/* ===== CTA CLEAN FINAL ===== */
+
+.about-cta{
+  padding: 70px 0;
+}
+
+/* keep items close */
+.about-cta .cta-inner{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  padding: 20px 0;
+}
+
+/* make sure NO rectangle card */
+.about-cta .cta-inner{
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+.about-cta .cta-inner::before,
+.about-cta .cta-inner::after{
+  display: none !important;
+  content: none !important;
+}
+
+.about-cta .cta-copy{
+  max-width: 720px;
+}
+
+/* ORANGE SHINING TEXT */
+.about-cta .cta-text{
+  margin: 0;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+
+  background: linear-gradient(
+    110deg,
+    #0f172a 38%,
+    #ff8c42 48%,
+    #ffd1b3 52%,
+    #0f172a 62%
+  );
+  background-size: 220% auto;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: shine 6s linear infinite;
+}
+
+/* if any child tags inside, force same shine */
+.about-cta .cta-text *{
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+@keyframes shine{
+  0%   { background-position: 220% center; }
+  100% { background-position: -220% center; }
+}
+
+/* ORANGE BUTTON + ORANGE HOVER (NO BLUE ANYWHERE) */
+.about-cta .cta-button{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  background: #ff8c42;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 12px 28px rgba(255,140,66,0.28);
+
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.about-cta .cta-button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(255,140,66,0.40);
+  filter: brightness(1.02);
+}
+
+.about-cta .cta-button:active{
+  transform: translateY(0);
+}
+.lets-talk{
+  transition: 
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.lets-talk:hover{
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 
+    0 25px 50px rgba(255,140,66,0.45),
+    0 0 40px rgba(255,180,120,0.4);
+}
+/* mobile */
+@media (max-width: 820px){
+  .about-cta .cta-inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }}
+
+
+.about-hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-image {
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+
+  border: 5px solid #ffb678;
+
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.08),
+    0 0 0 8px rgba(255,182,120,0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-pic:hover {
+  transform: scale(1.05) rotate(1deg);
+
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.12),
+    0 0 0 10px rgba(255,182,120,0.25);
+}
+.profile-pic:hover {
+  transform: scale(1.08);
+
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.15),
+    0 0 0 10px rgba(255,182,120,0.25);
+}
+
+
+.profile-pic {
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes glow {
+  0%   { box-shadow: 0 0 0 6px rgba(255,182,120,0.15); }
+  50%  { box-shadow: 0 0 0 12px rgba(255,182,120,0.25); }
+  100% { box-shadow: 0 0 0 6px rgba(255,182,120,0.15); }
+}
+
+.profile-pic {
+  animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+}
+/* =========================
+   PINPAL ONLY (projects/pinpal.html)
+   ========================= */
+
+/* Make hero area wider on desktop (so it doesn't look boxed/centered too tight) */
+.page-pinpal .case-hero__inner{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+/* Make the hero image behave nicely (mockup style) */
+.page-pinpal .case-hero__frame{
+  padding: 22px;
+}
+/* PINPAL: hero should be single column after removing image */
+.page-pinpal .case-hero__inner{
+  grid-template-columns: 1fr;
+}
+
+
+.page-pinpal .case-hero__frame img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+/* FULL WIDTH content area ONLY on pinpal */
+.page-pinpal .page-pinpal-main{
+  max-width: none;
+  padding: 0; /* removes the global .container limit */
+}
+
+/* Sidebar + content layout: LEFT aligned (not centered) */
+.page-pinpal .case-layout{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 88px;
+
+  /* IMPORTANT: no auto-centering */
+  max-width: none;
+  margin: 80px 0 0;     /* no left/right auto */
+  padding: 0 64px;      /* space from screen edge */
+  align-items: start;
+}
+
+/* Sticky sidebar */
+.page-pinpal .case-sidebar{
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+
+/* Sidebar title */
+.page-pinpal .case-sidebar .kicker{
+   font-size: 16px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  color: #f39a4a;
+  margin: 0 0 26px;
+}
+
+
+
+/* Sidebar links bigger */
+.page-pinpal .case-sidebar a{
+display: block;
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.page-pinpal .case-sidebar a:hover{
+  color: #f39a4a;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .page-pinpal .case-hero__inner{
+    padding: 0 24px;
+  }
+
+  .page-pinpal .case-layout{
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 24px;
+  }
+
+  .page-pinpal .case-sidebar{
+    position: static;
+  }
+}
+
+/* =========================
+   PINPAL HERO — REMOVE CARD LOOK
+   ========================= */
+
+.page-pinpal .case-hero{
+  background: transparent;   /* remove the big hero background */
+  border-bottom: none;       /* remove bottom line */
+  padding: 32px 0 0;         /* smaller spacing */
+}
+
+/* PINPAL: single-column hero (no image) */
+.page-pinpal .case-hero__inner{
+  grid-template-columns: 1fr;
+}
+
+
+/* remove the white box around image */
+.page-pinpal .case-hero__frame{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* optional: keep image clean */
+.page-pinpal .case-hero__frame img{
+  border-radius: 18px;  /* keep rounded image only (or set 0 if you want sharp) */
+}
+
+
+/* PINPAL – Goals extra content */
+
+.page-pinpal .goals+extra,
+.page-pinpal .goals-extra{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;              /* smaller gap */
+  max-width: 900px;       /* key: stops it stretching too wide */
+  width: 100%;
+}
+.page-pinpal .goals-block h3{
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.page-pinpal .goals-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-pinpal .goals-list li{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.page-pinpal .goals-list li::before{
+  content: "•";
+  color: var(--brand-2);
+  margin-right: 10px;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .page-pinpal .goals-extra{
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+/* PINPAL – Goals side by side */
+.page-pinpal .goals-extra{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 👈 side by side */
+  gap: 64px;
+  margin-top: 40px;
+}
+
+/* =========================
+   DIGITAL HEALTH —
+   ========================= */
+
+/* HERO section background + spacing */
+.page-digital-health .case-hero{
+  background: var(--bg-soft);     /* same as your other hero bg */
+  border-bottom: none;            /* removes the line */
+  padding: 64px 0 46px;           /* same spacing as your base hero */
+}
+
+/* DIGITAL HEALTH HERO — spread like the example (text left, image right) */
+.page-digital-health .case-hero__inner{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 64px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* LEFT text | RIGHT image */
+  gap: 56px;
+  align-items: center;
+}
+
+/* Left content: force left alignment */
+.page-digital-health .case-hero__left{
+  text-align: left;
+}
+
+/* Title sizing (optional tweak to match your style) */
+.page-digital-health .case-hero__title{
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 1;
+}
+
+/* Duration card stays the same but you can slightly widen it */
+.page-digital-health .case-hero__meta{
+  max-width: 320px;
+}
+
+/* Back to work button spacing */
+.page-digital-health .case-hero__btn{
+  margin-top: 14px;
+}
+
+/* ✅ REMOVE / HIDE ANY HERO IMAGE IF IT'S STILL IN YOUR HTML */
+.page-digital-health .case-hero__right,
+.page-digital-health .case-hero__frame,
+.page-digital-health .case-hero__frame img{
+  display: none !important;
+}
+
+/* Mobile spacing */
+@media (max-width: 900px){
+  .page-digital-health .case-hero__inner{
+    padding: 0 24px;
+  }
+}
+/* =========================
+   DIGITAL HEALTH CONTENT
+   ========================= */
+
+.page-dhw-content{
+  background: #fff9ee;
+}
+
+/* layout */
+.case-layout{
+  display: grid;
+  grid-template-columns: 340px 1fr; /* ⬅️ wider sidebar */
+  gap: 80px;
+  padding: 100px 64px;
+}
+
+.page-digital-health .case-content{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+/* sidebar */
+.case-sidebar{
+  position: sticky;
+  top: 120px;
+}
+
+.case-sidebar .kicker{
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  color: #f39a4a;
+  margin-bottom: 16px;
+  border-bottom: 3px solid #ffb678;
+  padding-bottom: 8px;
+}
+
+.case-sidebar nav a{
+  display: block;
+  font-weight: 800;
+  margin: 14px 0;
+  text-decoration: none;
+  color: #0b1f3a;
+}
+
+.case-sidebar nav a.active{
+  color: #ffb678;
+}
+
+/* content */
+.case-content section{
+  margin-bottom: 120px;
+}
+
+.section-title{
+  font-size: 64px;
+  font-weight: 900;
+  color: #ffb678;
+  margin-bottom: 32px;
+}
+
+/* two column row */
+.two-col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+h3{
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #0b1f3a;
+}
+
+/* pill list */
+.pill-list{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill-list li{
+  font-weight: 700;
+  color: #0b1f3a;
+}
+
+/* goals cards */
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.goal-card{
+  border: 3px solid #8fb7ff;
+  border-radius: 24px;
+  padding: 60px 20px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+  color: #0b1f3a;
+  background: #fff9ee;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .case-layout{
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+  }
+
+  .case-sidebar{
+    position: static;
+  }
+
+  .two-col{
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .section-title{
+    font-size: 44px;
+  }
+}
+.skills-list{
+  padding-left: 0;
+  margin: 0;
+}
+
+.goal-item{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0b1f3a;
+}
+
+.goal-icon{
+  width: 32px;
+  height: 32px;
+  stroke-width: 2.5;
+  color: #ffb678;
+  flex-shrink: 0;
+}
+
+.goals-list {
+  margin-top: 24px;
+  padding-left: 22px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #0b1f3a;
+}
+
+.goals-list li {
+  margin-bottom: 12px;
+}
+.goals-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.goals-list li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.goals-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffb678;
+  font-weight: bold;
+}
+
+.section-divider{
+  width: 100%;
+  max-width: 1200px;        /* keeps it centered like your content */
+  height: 3px;
+  background: #8fb7ff;     /* soft blue line */
+  margin: 80px auto;       /* space above & below */
+  border-radius: 2px;
+}
+.page-digital-health{
+  background: var(--bg-soft); /* cream page background */
+}
+
+.page-digital-health .case-hero{
+  background: var(--bg-soft); /* SAME as page */
+  border-bottom: none;
+  padding: 120px 0 80px; /* control spacing */
+}
+/* DIGITAL HEALTH – Inline Skills Row */
+
+.skills-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.skills-list li{
+  position: relative;
+  padding-left: 16px;
+  font-size: 8px;
+  font-weight: 700;   /* slightly bold */
+  color: #0b1f3a;
+}
+
+.skills-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #8fb7ff; /* SAME blue as your borders */
+  border-radius: 50%;
+}
+/* FORCE inline blue-bullet skills row */
+.page-digital-health ul.skills-list,
+.page-digital-health ul.project-tags{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 30px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 24px 0 0 !important;
+}
+
+/* Digital Health tools — inline blue bullets */
+.work-tools-inline{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 30px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 24px 0 0 !important;
+}
+
+.work-tools-inline li{
+  position: relative !important;
+  padding-left: 16px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0b1f3a !important;
+}
+
+.work-tools-inline li::before{
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 8px !important;
+  height: 8px !important;
+  background: #8fb7ff !important;
+  border-radius: 50% !important;
+}
+/* DIGITAL HEALTH sidebar size fix */
+.page-digital-health .case-nav{
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px; /* less spacing */
+}
+
+/* smaller, clean */
+.page-digital-health .case-nav a{
+  display: inline-block;
+  text-decoration: none;
+
+  font-size: 32px;      /* ✅ smaller */
+  font-weight: 700;
+  line-height: 1.15;
+
+  color: rgba(15, 23, 42, 0.45);
+  margin: 0;
+  position: relative;
+}
+
+/* active */
+.page-digital-health .case-nav a.active{
+  color: #FFC07A;
+}
+
+/* underline bar */
+.page-digital-health .case-nav a.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 180px;   /* shorter underline */
+  height: 5px;    /* thinner */
+  background: #FFC07A;
+  border-radius: 999px;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .page-digital-health .case-nav{
+    gap: 18px;
+  }
+  .page-digital-health .case-nav a{
+    font-size: 22px;
+  }
+  .page-digital-health .case-nav a.active::after{
+    width: 120px;
+    bottom: -10px;
+    height: 4px;
+  }
+}
+/* Smooth nav animation */
+.nav{
+  transition: padding 0.25s ease, transform 0.25s ease;
+}
+
+/* default sizes */
+.nav .nav-logo{
+  transition: transform 0.25s ease, height 0.25s ease;
+  transform: none;              /* prevents jump */
+}
+
+/* IMPORTANT: stop logo moving on hover */
+.brand,
+.brand:hover{
+  transform: none !important;
+}
+.brand img,
+.brand:hover img{
+  transform: none !important;
+}
+
+/* shrink state */
+.nav.shrink{
+  padding: 12px 0;              /* smaller top/bottom space */
+}
+
+/* shrink logo */
+.nav.shrink .nav-logo{
+  height: 54px;                 /* adjust */
+}
+
+/* shrink the pill menu */
+.nav.shrink .menu-pill{
+  padding: 14px 28px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* shrink the text inside */
+.nav.shrink .menu-pill a{
+  font-size: 20px;
+  padding-bottom: 12px;
+}
+
+/* shrink underline */
+.nav.shrink .menu-pill a.active::after{
+  width: 70px;
+  height: 5px;
+}
+/* =========================
+   WIREFRAMES SECTION
+   ========================= */
+
+.wireframes-section{
+  background: var(--bg-soft);   /* same cream background */
+  padding: 120px 0;
+  text-align: center;           /* centers the heading */
+}
+
+/* Title */
+.wireframes-section .section-title{
+  font-size: clamp(48px, 6vw, 90px);
+  color: #ffb678;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 60px;
+}
+
+/* ===== FIGMA EMBED — CLEAN SIZE ===== */
+
+.figma-wrapper{
+  width: 100%;
+  max-width: 1200px;     /* smaller, cleaner */
+  height: 650px;         /* reduced height */
+  margin: 60px auto;
+
+  background: #ffffff;
+  padding: 16px;
+
+  border-radius: 24px;
+  border: 3px solid #8fb7ff;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.figma-wrapper iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 18px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 900px){
+  .figma-wrapper{
+    height: 520px;
+    padding: 14px;
+  }
+}
+
+.page-digital-health .case-hero__meta{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  max-width: none;
+  margin-bottom: 18px; /* optional */
+}
+/* DIGITAL HEALTH HERO — image + text (use your dhw class) */
+.page-digital-health .case-hero__inner--dhw{
+  max-width: 1400px;
+  margin: 0;
+  padding: 0 64px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* TEXT | IMAGE */
+  gap: 80px;
+  align-items: center;
+}
+
+/* Image box (right side) */
+.page-digital-health .case-hero__image{
+  display: flex;
+  justify-content: flex-end; /* pushes image to the right */
+}
+
+/* Image styling */
+.page-digital-health .case-hero__image img{
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+/* Text stays left */
+.page-digital-health .case-hero__left{
+  text-align: left;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .page-digital-health .case-hero__inner--dhw{
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .page-digital-health .case-hero__image{
+    justify-content: left;
+    order: -1; /* image on top on mobile */
+  }
+}
+
+
+/* Image styling */
+.case-hero__image img{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+/* Text stays left-aligned */
+.page-digital-health .case-hero__left{
+  text-align: left;
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* so headings don't get hidden behind top nav when clicking */
+.case-content section{
+  scroll-margin-top: 120px;
+}
+
+.case-sidebar nav a{
+  display: block;
+  font-weight: 800;
+  margin: 14px 0;
+  text-decoration: none;
+  color: #0b1f3a;
+  transition: color .2s ease;
+}
+
+.case-sidebar nav a:hover{
+  color: #ffb678;
+}
+
+.case-sidebar nav a.active{
+  color: #ffb678;
+}
+.case-sidebar{
+  position: sticky;
+  top: 120px;   /* adjust if needed */
+  height: fit-content;
+  align-self: start;
+}
+
+/* DIGITAL HEALTH — typography override (safe for launch) */
+.page-digital-health p,
+.page-digital-health li{
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+  font-weight: 500 !important;
+}
+
+.page-digital-health .case-hero__title{
+  font-size: 52px !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+}
+
+.page-digital-health .section-title{
+  font-size: 40px !important;
+  font-weight: 900 !important;
+}
+
+.page-digital-health h3{
+  font-size: 28px !important;
+  font-weight: 700 !important;
+}
+
+.page-digital-health strong,
+.page-digital-health b{
+  font-weight: 700 !important;
+}
+/* =========================
+   DIGITAL HEALTH — BOLD TEXT ONLY
+   (no size or layout changes)
+   ========================= */
+
+.page-digital-health p,
+.page-digital-health li{
+  font-weight: 600 !important;   /* bold but readable */
+}
+
+/* slightly stronger emphasis */
+.page-digital-health strong,
+.page-digital-health b{
+  font-weight: 700 !important;
+}
+.page-digital-health .blue-margin{
+  display: inline-block;
+  padding: 0px;              /* small spacing between border & image */
+  border: 6px solid #8fb7ff; /* 👈 thin blue line */
+  border-radius: 22px;       /* match phone curve */
+  background: transparent;
+}
+
+.page-digital-health .blue-margin img{
+  display: block;
+  max-width: 260px;
+  height: auto;
+  border-radius: 18px;
+}
+
+/* =========================
+   DIGITAL HEALTH — SVG HERO SHAPES (FINAL)
+   ========================= */
+
+/* hero container */
+.page-digital-health .case-hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* container for decorative shapes */
+.page-digital-health .dh-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* keep hero content above shapes */
+.page-digital-health .case-hero__inner{
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   SHAPE ANIMATIONS (FASTER, CLEAN)
+   ========================= */
+
+/* left shape */
+.page-digital-health .dh-shape--left{
+  animation: dhFloatLeft 12s ease-in-out infinite;
+}
+
+/* right shape */
+.page-digital-health .dh-shape--right{
+  animation: dhFloatRight 14s ease-in-out infinite;
+}
+
+/* orange dot */
+.page-digital-health .dh-dot{
+  animation: dhDotFloat 8s ease-in-out infinite;
+}
+
+/* =========================
+   KEYFRAMES
+   ========================= */
+
+@keyframes dhFloatLeft{
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-28px) rotate(2deg);
+  }
+}
+
+@keyframes dhFloatRight{
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(-2deg);
+  }
+}
+
+@keyframes dhDotFloat{
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+@media (prefers-reduced-motion: reduce){
+  .page-digital-health .dh-shape--left,
+  .page-digital-health .dh-shape--right,
+  .page-digital-health .dh-dot{
+    animation: none !important;
+  }
+}
+/* =========================
+   DIGITAL HEALTH — CONTENT SIDE SHAPES
+   ========================= */
+
+/* make content a positioning parent */
+.page-digital-health .case-content{
+  position: relative;
+  z-index: 1;
+}
+
+/* decor layer sits behind text but still visible */
+.page-digital-health .content-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* make sure sections appear above shapes */
+.page-digital-health .case-content > section{
+  position: relative;
+  z-index: 2;
+}
+
+/* shape base */
+.page-digital-health .content-shape{
+  position: absolute;
+  width: 620px;
+  height: auto;
+  opacity: 0.12;
+  filter: blur(0px);
+}
+
+/* left side */
+.page-digital-health .content-shape--left{
+  left: -360px;
+  top: 180px;
+  animation: contentFloatLeft 18s ease-in-out infinite;
+}
+
+/* right side */
+.page-digital-health .content-shape--right{
+  right: -360px;
+  top: 760px; /* pushes it near Planning/Wireframes */
+  animation: contentFloatRight 22s ease-in-out infinite;
+}
+
+/* animations */
+@keyframes contentFloatLeft{
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-38px); }
+}
+
+@keyframes contentFloatRight{
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-28px); }
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .page-digital-health .content-shape{
+    opacity: 0.08;
+    width: 480px;
+  }
+
+  .page-digital-health .content-shape--left{
+    left: -300px;
+  }
+
+  .page-digital-health .content-shape--right{
+    right: -300px;
+  }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .page-digital-health .content-shape--left,
+  .page-digital-health .content-shape--right{
+    animation: none !important;
+  }
+}
+/* keep background consistent (NO overlap) */
+html, body{
+  margin: 0;
+  padding: 0;
+  background: #fff9ee;
+}
+
+/* remove black strip without killing spacing */
+.page-digital-health .case-hero,
+.page-digital-health main,
+.page-digital-health .page-dhw-content{
+  background: #fff9ee !important;
+  margin-top: 0 !important;
+}
+
+/* ✅ move logo more left ONLY on digital health */
+.page-digital-health .nav-inner{
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+/* ===== DIGITAL HEALTH: NAV FIX ONLY ===== */
+.page-digital-health .nav{
+  position: fixed !important;   /* matches other pages */
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--bg-soft) !important;
+}
+
+.page-digital-health .nav-inner{
+  max-width: 1200px !important;   /* same as your other pages */
+  margin: 0 auto !important;
+  padding: 0 16px !important;     /* controls logo left spacing */
+}
+
+/* make sure content doesn't hide behind fixed nav */
+
+.page-digital-health .nav{ position: fixed !important; }
+/* DIGITAL HEALTH background strip fix */
+.page-digital-health,
+.page-digital-health body{
+  background: #fff9ee !important;
+}
+
+.page-digital-health .case-hero{
+  background: #fff9ee !important;
+}
+/* FIX: reduce space between hero and Overview */
+body.page-digital-health .case-hero{
+  padding: 80px 0 00px !important;  /* top | bottom */
+}
+/* ===== GOALS CARD STYLE ===== */
+
+.goal-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.goal-card{
+  background: #fff9ee;
+  border: 1px solid #dbeafe;   /* lighter blue */
+  border-radius: 28px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.goal-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-color: #ffb678;
+}
+
+.goal-icon-circle{
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #ffb678;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.goal-card h3{
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #0b1f3a;
+}
+
+.goal-card p{
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+/* =========================
+   HOME PAGE — FINAL POLISH 
+   ========================= */
+
+/* Background + overall spacing */
+body{
+  background: #fff9ee; /* cream */
+}
+
+/* Make container match the screenshot spacing */
+.container{
+  max-width: 1100px;
+  padding: 0 56px;
+}
+
+/* NAV spacing */
+.nav{
+  padding: 26px 0;
+  background: transparent;
+}
+
+.nav-inner{
+  max-width: 1200px;
+  padding: 0 56px;
+}
+
+
+/* Capsule menu like screenshot */
+.menu{
+  padding: 20px 48px;
+  gap: 38px;
+  border-radius: 999px;
+  background: #3B82F6;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+}
+
+.nav .menu a{
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* HERO spacing */
+.hero{
+  padding: 70px 0 10px;  /* big top breathing space */
+}
+
+/* Headline size/weight like screenshot */
+.hero h1{
+  font-size: clamp(56px, 6vw, 84px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* Lead text width + spacing */
+.lead{
+  max-width: 62ch;
+  font-size: 22px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* Skill pills row */
+.skill-strip{
+  margin-top: 20px;
+  margin-bottom: 18px;
+  gap: 14px;
+}
+
+.skill-strip li{
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 800;
+  border-radius: 999px;
+  border: 2px solid rgba(59,130,246,0.30);
+  background: #fff;
+}
+
+/* Buttons like screenshot */
+.hero-actions{
+  margin-top: 8px;
+  gap: 14px;
+}
+
+.btn{
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.btn-primary{
+  background: #3B82F6;
+  color: #0f172a;
+}
+
+.btn-primary:hover{
+  transform: translateY(-1px);
+}
+
+.btn-ghost{
+  background: transparent;
+  border: 2px solid rgba(0,0,0,0.18);
+  color: #3b3b3b;
+}
+
+/* ARTICLES like screenshot */
+.article{
+  max-width: 1100px;
+  padding: 0 56px;
+  margin: 90px auto;
+}
+
+.article h2{
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.article p{
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 80ch;
+}
+
+/* Image card centered with shadow */
+.article-images{
+  margin: 30px 0 12px;
+  justify-content: center;
+}
+
+.article-images img{
+  max-width: 640px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+/* Caption */
+figure figcaption{
+  margin-top: 14px;
+  font-size: 18px;
+  color: #0f172a;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* PDF link line like screenshot */
+.article a{
+  font-size: 22px;
+  font-weight: 800;
+  color: #3B82F6;
+}
+
+/* Footer bar like screenshot */
+.footer{
+  background: #3B82F6;
+  padding: 42px 18px;
+  color: #0f172a;
+  font-size: 22px;
+  opacity: 1;
+}
+
+.footer a{
+  color: #0f172a;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 900px){
+  .container, .nav-inner, .article{
+    padding: 0 24px;
+  }
+
+  .nav .menu a{
+    font-size: 18px;
+  }
+
+  .hero{
+    padding-top: 40px;
+  }
+
+  .article h2{
+    font-size: 32px;
+  }
+}
+
+/* =====  About HERO DECOR (FINAL CLEAN) ===== */
+
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* shapes layer */
+.hero-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;           /* behind content */
+}
+
+/* shapes */
+.hero-decor img{
+  position: absolute;
+  display: block;
+  height: auto;
+  max-width: none;
+  z-index: 0;
+  opacity: 0.22;        /* 🔥 THIS is the key */
+}
+
+/* hero content above */
+.hero .container{
+  position: relative;
+  z-index: 5;
+}
+
+/* ---- POSITIONS (your layout) ---- */
+
+/* orange stays right */
+.hero-decor .shape-rect{
+  right: -160px;
+  top: 160px;
+  width: 640px;
+}
+
+/* blue in middle */
+.hero-decor .shape-polygon{
+  left: 55%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  width: 560px;
+}
+
+/* ellipse bottom */
+.hero-decor .shape-ellipse{
+  left: 45%;
+  bottom: -360px;
+  transform: translateX(-50%);
+  width: 900px;
+}
+
+.lets-talk {
+  position: relative;
+  padding: 12px 20px;
+  border: 2px solid #2f6bff;
+  color: #2f6bff;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: color 300ms ease;
+  z-index: 1;
+}
+
+/* ORANGE FILL */
+.lets-talk::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffb678;
+
+  border-radius: inherit;   /* 🔥 IMPORTANT FIX */
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+
+  z-index: -1;
+}
+
+.lets-talk:hover {
+  color: white;
+}
+
+.lets-talk:hover::before {
+  transform: scaleX(1);
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0.4, 0, 0.2, 1); }
+  70% { box-shadow: 0 0 0 12px rgba(135, 166, 244, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47,107,255,0); }
+}
+/* ===== ABOUT HOBBIES SECTION ===== */
+
+.about-hobbies{
+  padding: 80px 0;
+}
+
+.section-title{
+  font-size: 48px;
+  color: #f2a760;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hobby-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.hobby-card{
+  background: rgba(255,255,255,0.4);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #7ea0c9;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hobby-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.hobby-icon{
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hobby-card h3{
+  margin-bottom: 10px;
+  color: #13294b;
+}
+
+.hobby-card p{
+  color: #3c4a5c;
+  line-height: 1.6;
+}
+.hobby-card{
+  transition: transform .35s ease, box-shadow .35s ease;
+  will-change: transform;
+}
+
+.hobby-card:hover,
+.hobby-card:focus-within,
+.hobby-card.is-active{
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.38);
+  position: relative;
+  z-index: 2;
+}
+/* =========================
+   ABOUT — MY TOOLS
+   ========================= */
+
+.about-tools{
+  padding: 90px 0;
+}
+
+.tools-title{
+  font-size: 56px;
+  font-weight: 900;
+  color: #f39a4a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 26px;
+}
+
+.tools-sub{
+  font-size: 34px;
+  font-weight: 900;
+  color: #0b1f3a;
+  margin: 0 0 28px;
+}
+
+.tools-sub--space{
+  margin-top: 60px;
+}
+
+.tools-grid{
+  display: grid;
+  gap: 46px;
+  align-items: start;
+}
+
+.tools-grid--6{
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.tools-grid--4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tool{
+  text-align: center;
+}
+
+.tool img{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.tool p{
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f39a4a;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .tools-box{
+    padding: 34px;
+  }
+
+  .tools-grid--6{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tools-grid--4{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.tool-icon{
+  font-size: 60px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.tool-logo{
+  width: 72px;
+  height: 72px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.tool:hover .tool-logo{
+  transform: translateY(-6px);
+  transition: transform .25s ease;
+}
+  /* ===== Modern scroll reveal ===== */
+.reveal{
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.8,.2,1),
+    filter .7s ease;
+  will-change: transform, opacity, filter;
+}
+
+/* directions */
+.reveal.from-left{ transform: translateX(-36px); }
+.reveal.from-right{ transform: translateX(36px); }
+.reveal.from-up{ transform: translateY(28px); }
+
+/* active */
+.reveal.is-visible{
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0,0);
+}
+
+/* stagger delay */
+.reveal{
+  transition-delay: var(--d, 0ms);
+}
+
+
+/* hover animation */
+.tool img,
+.tool-icon{
+  transition: transform .25s ease;
+}
+
+.tool:hover img,
+.tool:hover .tool-icon{
+  transform: translateY(-8px) scale(1.03);
+}
+/* ===== FLOATING ANIMATION ===== */
+
+@keyframes floatImg {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.about-tools .tool img,
+.about-tools .tool .tool-icon{
+  animation: floatImg 4s ease-in-out infinite;
+}
+
+/* Optional: slight delay so they don't move same time */
+.about-tools .tool:nth-child(1) img { animation-delay: 0s; }
+.about-tools .tool:nth-child(2) img { animation-delay: .5s; }
+.about-tools .tool:nth-child(3) img { animation-delay: 1s; }
+.about-tools .tool:nth-child(4) img { animation-delay: 1.5s; }
+.about-tools .tool:nth-child(5) img { animation-delay: 2s; }
+.about-tools .tool:nth-child(6) img { animation-delay: 2.5s; }
+
+.about-tools .tool:nth-child(1) .tool-icon { animation-delay: 0s; }
+.about-tools .tool:nth-child(2) .tool-icon { animation-delay: .5s; }
+.about-tools .tool:nth-child(3) .tool-icon { animation-delay: 1s; }
+.about-tools .tool:nth-child(4) .tool-icon { animation-delay: 1.5s; }
+
+body{
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: var(--line);
+}
+
+/* Global typography */
+h1{ font-size: var(--h1); line-height: 1.1; margin: 0 0 16px; }
+h2{ font-size: var(--h2); margin: 0 0 12px; }
+h3{ font-size: var(--h3); margin: 0 0 10px; }
+p{ font-size: var(--body); margin: 0 0 16px; color: var(--ink); }
+small{ font-size: var(--small); color: var(--muted); }
+
+a{ color: inherit; }
+img{ max-width: 100%; height: auto; display:block; }
+
+/* Layout helpers */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.lead{
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* =========================
+   NAV (ALL PAGES) — CLEAN
+   ========================= */
+
+.nav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+
+  background: var(--bg-soft);
+  padding: 22px 0;
+  transition: padding .25s ease, background .25s ease;
+}
+
+/* inner row */
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px; /* ✅ controls how left the logo is */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo{
+  width: 120px;
+  height: auto;
+  display: block;
+  transition: width .25s ease;
+}
+
+/* Capsule menu */
+.menu{
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  background: var(--brand-2);
+  padding: 18px 44px;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  transition: padding .25s ease;
+}
+
+.nav .menu a{
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 26px;
+  color: #fff;
+  position: relative;
+  padding: 6px 2px;
+}
+
+/* underline */
+.nav .menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-10px;
+  width:0;
+  height:4px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+.nav .menu a:hover::after,
+.nav .menu a.active::after{
+  width: 100%;
+}
+
+/* ✅ shrink state */
+.nav.shrink{
+  padding: 10px 0;
+}
+
+.nav.shrink .nav-logo{
+  width: 90px;
+}
+
+.nav.shrink .menu{
+  padding: 12px 30px;
+}
+
+
+/* responsive */
+@media (max-width: 900px){
+  .nav-inner{ flex-direction: column; gap: 14px; }
+  .menu{ width: 100%; justify-content: center; padding: 14px 20px; gap: 18px; flex-wrap: wrap; }
+  .nav .menu a{ font-size: 18px; }
+}
+
+/* =========================
+   HOME HERO (index.html)
+   ========================= */
+
+.hero-inner{
+  display: grid;
+  grid-template-columns: 1fr;   /* ✅ single column */
+  gap: 22px;
+  align-items: start;
+}
+.hero-logo{ width: 180px; } /* slightly smaller = cleaner */
+.hero-logo-wrap{ margin-left: 0; } /* remove negative margin */
+
+.hero-content p{
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 52ch;
+}
+/* =========================
+   HOME HERO UPGRADES
+   ========================= */
+
+/* skills strip */
+.skill-strip{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 14px 0 18px;
+}
+
+/* skill pills */
+.skill-strip li{
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(59,130,246,0.35);
+  background: #fff;
+  color: #0f172a;
+  transition: all 0.25s ease;
+}
+
+/* hover animation */
+.skill-strip li:hover{
+  background: #ffb678;  /* orange */
+  color: #ffffff;       /* dark text (better contrast than white) */
+  transform: scale(1.04);
+  box-shadow: 0 10px 22px rgba(255,182,120,0.35);
+}
+
+/* buttons row */
+.hero-actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* secondary button */
+.btn-ghost{
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.18);
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+}
+
+/* mobile align */
+@media (max-width: 768px){
+  .skill-strip{ justify-content: center; }
+  .hero-actions{ justify-content: center; }
+}
+/* Buttons (global) */
+.btn{
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,0.10);
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.btn-primary{
+  background: var(--brand-2);
+  color: var(--ink);
+  border-color: rgba(0,0,0,0.0);
+}
+
+/* Base button */
+.btn{
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,0.10);
+  transition: 
+    background0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.25s ease;
+}
+
+/* Primary button */
+.btn-primary{
+  background: var(--brand-2);
+  color: #0f172a;
+  border: none;
+}
+
+/* Primary hover */
+.btn-primary:hover{
+  border: 1px solid rgba(59,130,246,0.35);
+  color: #ffffff;
+  transform: scale(1.04);
+  box-shadow: 0 12px 26px rgba(255,182,120,0.35);
+}
+
+/* Ghost button */
+.btn-ghost{
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.18);
+  color: #37435f;
+}
+
+/* Ghost hover */
+.btn-ghost:hover{
+  background: #ffb678;
+border: 1px solid rgba(59,130,246,0.35);
+  color: #ffffff;
+  transform: scale(1.04);
+  box-shadow: 0 12px 26px rgba(255,182,120,0.35);
+}
+/* ===== Scroll reveal animations ===== */
+.reveal{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* images reveal */
+.reveal-img{
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition: opacity .8s ease, transform .8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-img.is-visible{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* hover effect for images */
+.article-images img{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.article-images img:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal-img{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+.hero-load{
+  animation: heroIn .8s ease both;
+}
+
+@keyframes heroIn{
+  from{ opacity: 0; transform: translateY(18px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+/* Mobile hero */
+@media (max-width: 768px){
+  .hero-inner{
+    grid-template-columns: 1fr;
+    text-align:center;
+    gap: 24px;
+  }
+  .hero-logo-wrap{ margin-left: 0; }
+  .hero-logo{ margin: 0 auto; }
+}
+
+/* =========================
+   FOOTER (ALL PAGES)
+   ========================= */
+.footer{
+  background: var(--brand-2);
+  color: var(--ink);
+  text-align:center;
+  padding: 18px;
+  margin-top: 60px;
+  border-top: 1px solid #e5e7eb;
+  opacity: 0.95;
+}
+.footer{
+  position: relative;
+  z-index: 1;
+}
+/* =========================
+   HOME ARTICLES (index.html)
+   ========================= */
+.article{
+  max-width: var(--container);
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.article h2{
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.article p{
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.article-images{
+  display:flex;
+  justify-content:center;
+  margin: 20px 0;
+}
+
+.article-images img{
+  width: 90%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.article a{
+  color: var(--brand-2);
+  font-weight: 700;
+  text-decoration:none;
+}
+.article a:hover{ text-decoration: underline; }
+
+/* =========================
+   WORK PAGE PROJECT CARDS (work.html)
+   ========================= */
+.project-feature{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items:center;
+  padding: 32px;
+  border: 3px solid #8fb7ff;
+  border-radius: 26px;
+  background: #fff9ee;
+  margin-top: 40px;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-kicker{
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #f39a4a;
+  margin: 0 0 10px;
+}
+
+.project-title{
+  font-size: 56px;
+  line-height: 1;
+  margin: 0 0 16px;
+}
+
+.project-desc{
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 52ch;
+  margin: 0 0 18px;
+  color: #2f3b4a;
+}
+
+/* Tags list */
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px 18px;
+  padding: 0;
+  margin: 0 0 26px;
+  list-style: none;
+  color: #2f3b4a;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.project-tags li::before{
+  content:"•";
+  margin-right: 8px;
+  color:#8fb7ff;
+}
+
+/* Project button */
+.project-btn{
+  display:inline-block;
+  padding: 14px 24px;
+  border-radius: 16px;
+  background:#ffb678;
+  color:#fff;
+  font-weight: 900;
+  text-decoration:none;
+  font-size: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  transition: transform .15s ease, opacity .15s ease;
+}
+.project-btn:hover{ transform: translateY(-1px); opacity: .95; }
+
+.project-feature__media{
+  background: rgba(0,0,0,.06);
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.project-feature__media img{
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 18px;
+}
+
+/* Work page responsive */
+@media (max-width: 900px){
+  .project-feature{ grid-template-columns: 1fr; }
+  .project-title{ font-size: 44px; }
+}
+
+/* =========================
+   WORK PAGE: FIGMA LINKS (work.html)
+   ========================= */
+.prototype-section{
+  margin-top: 60px;
+  padding: 20px 0;
+  border-top: 2px solid #e5e7eb;
+  position: relative;
+  z-index: 10;
+}
+
+.figma-links{
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.figma-links a{
+  display:block;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  box-shadow: var(--shadow-soft);
+  color: var(--brand);
+  text-decoration:none;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  transition: transform .15s ease;
+}
+.figma-links a:hover{ transform: translateY(-1px); text-decoration: underline; }
+
+/* =========================
+   VIDEO + DOWNLOAD LIST (work.html)
+   ========================= */
+.project-card{
+  max-width:800px;
+  margin:24px auto 0;
+  background:#f9fafb;
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.project-card img{ width:100%; border-radius:12px; }
+
+.project-card figcaption{
+  margin-top:10px;
+  font-size:14px;
+  font-weight:700;
+  color:#334155;
+  text-align:center;
+}
+
+.download-list{
+  list-style:none;
+  padding:0;
+  max-width:600px;
+  margin:20px auto 0;
+}
+
+.download-list li{
+  background:#f9fafb;
+  padding:14px 18px;
+  border-radius:12px;
+  margin-bottom:12px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.06);
+}
+
+.work-video{
+  display:block;
+  width:100%;
+  max-width:900px;
+  margin:20px auto 0;
+  border-radius:12px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18);
+}
+
+/* =========================
+   CASE STUDY HERO (pinpal.html)
+   ========================= */
+.case-hero{
+  background: var(--bg-soft);
+  padding: 64px 0 46px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.case-hero__inner{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.case-hero__kicker{
+  font-weight: 900;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.case-hero__title{
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 1;
+  margin: 0 0 22px;
+}
+
+.case-hero__meta{
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 16px;
+  max-width: 260px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 18px;
+}
+
+.case-hero__metaTitle{
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.case-hero__metaValue{
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.case-hero__btn{
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: var(--brand-2);
+  color: var(--ink);
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transition: transform .15s ease, opacity .15s ease;
+}
+.case-hero__btn:hover{ transform: translateY(-1px); opacity: .95; }
+
+.case-hero__frame{
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.case-hero__frame img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Case study responsive */
+@media (max-width: 900px){
+  .case-hero__inner{ grid-template-columns: 1fr; }
+  .case-hero__frame{ order: -1; }
+}
+
+/* =========================
+   ABOUT PAGE 
+   ========================= */
+
+/* Side-by-side images container */
+.about-images{
+  max-width: 900px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* Each image block */
+.about-images .image-item{
+  max-width: 320px;
+  text-align: center;
+}
+
+/* Images themselves */
+.about-images .image-item img{
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+/* ARROWS */
+.arrow-right,
+.arrow-down{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--brand);
+  opacity: 1;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* Arrow symbols */
+.arrow-right::before{ content:"→"; }
+.arrow-down::before{ content:"↓"; }
+
+/* Positioning */
+.arrow-right{
+  flex: 0 0 auto;
+  margin: 0 12px;
+}
+
+.arrow-down{
+  margin: 24px auto 20px;
+}
+
+/* Survey section (bottom image) */
+.process-bottom{
+  max-width: 620px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+/* Survey images */
+.process-bottom img{
+  width: 100%;
+  max-width: 520px;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+/* Caption text */
+.process-bottom .caption,
+.about-images .caption{
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+/* Mobile: stack images + swap arrows */
+@media (max-width: 768px){
+  .about-images{
+    flex-direction:column;
+    gap: 18px;
+  }
+
+  .about-images .image-item{
+    max-width: 520px;
+  }
+
+  .about-images .image-item img{
+    max-width: 520px;
+  }
+
+  .arrow-right{
+    display:none;
+  }
+
+  .arrow-down{
+    margin: 10px 0 24px;
+  }
+}
+
+/* About page logo smaller only */
+.about-hero .about-logo{
+  width: 140px;
+  max-width: 140px;
+  height: auto;
+}
+/* =========================
+   Arrow Animations
+   ========================= */
+
+/* Right arrow slide animation */
+@keyframes slideArrow {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+.arrow-right {
+  animation: slideArrow 1.5s ease-in-out infinite;
+}
+
+/* Down arrow bounce animation */
+@keyframes bounceArrow {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+.arrow-down {
+  animation: bounceArrow 1.5s ease-in-out infinite;
+}
+/* =========================
+   Image Entry Animation
+   ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-images .image-item,
+.process-bottom {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Stagger timing */
+.about-images .image-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.about-images .image-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.process-bottom {
+  animation-delay: 0.6s;
+}
+.about-images .image-item img,
+.process-bottom img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.about-images .image-item img:hover,
+.process-bottom img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-images .image-item,
+  .process-bottom,
+  .arrow-right,
+  .arrow-down {
+    animation: none;
+    transform: none;
+  }
+}
+/* =========================
+   GLOBAL DECOR SHAPES
+   ========================= */
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+.shape-polygon { opacity: 0.18; }
+.shape-rect    { opacity: 0.16; }
+.shape-ellipse { opacity: 0.50; } /* <- make brighter */
+.shape-ellipse{
+  opacity: 0.75 !important;
+}
+
+/* positions */
+.shape-polygon {
+  width: 520px;
+  left: -150px;
+  top: -120px;
+}
+
+.shape-rect {
+  width: 680px;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== GLOBAL DECOR SHAPES (FINAL) ===== */
+
+/* positions */
+.shape-polygon{
+  width: 520px;
+  left: -150px;
+  top: -120px;
+  opacity: 0.18;
+}
+
+.shape-rect{
+  width: 680px;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  opacity: 0.16;
+}
+
+.shape-ellipse{
+  width: 520px;
+  right: -220px;
+  bottom: -220px;
+  opacity: 0.75;  /* ✅ brighter */
+}
+
+/* Center soft rectangle */
+.shape-rect {
+  width: 680px;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+}
+
+/* Bottom ellipse */
+.shape-ellipse {
+  width: 520px;
+  right: -220px;   /* change from left to right */
+  bottom: -220px;
+  opacity: 0.28;
+}
+
+/* =========================
+   PINPAL ONLY (projects/pinpal.html)
+   ========================= */
+
+/* Make hero area wider on desktop (so it doesn't look boxed/centered too tight) */
+.page-pinpal .case-hero__inner{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+/* Make the hero image behave nicely (mockup style) */
+.page-pinpal .case-hero__frame{
+  padding: 22px;
+}
+/* PINPAL: hero should be single column after removing image */
+.page-pinpal .case-hero__inner{
+  grid-template-columns: 1fr;
+}
+
+
+.page-pinpal .case-hero__frame img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+/* FULL WIDTH content area ONLY on pinpal */
+.page-pinpal .page-pinpal-main{
+  max-width: none;
+  padding: 0; /* removes the global .container limit */
+}
+
+/* Sidebar + content layout: LEFT aligned (not centered) */
+.page-pinpal .case-layout{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 88px;
+
+  /* IMPORTANT: no auto-centering */
+  max-width: none;
+  margin: 80px 0 0;     /* no left/right auto */
+  padding: 0 64px;      /* space from screen edge */
+  align-items: start;
+}
+
+/* Sticky sidebar */
+.page-pinpal .case-sidebar{
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+
+/* Sidebar title */
+.page-pinpal .case-sidebar .kicker{
+   font-size: 16px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  color: #f39a4a;
+  margin: 0 0 26px;
+}
+
+
+
+/* Sidebar links bigger */
+.page-pinpal .case-sidebar a{
+display: block;
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.page-pinpal .case-sidebar a:hover{
+  color: #f39a4a;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .page-pinpal .case-hero__inner{
+    padding: 0 24px;
+  }
+
+  .page-pinpal .case-layout{
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 24px;
+  }
+
+  .page-pinpal .case-sidebar{
+    position: static;
+  }
+}
+
+/* =========================
+   PINPAL HERO — REMOVE CARD LOOK
+   ========================= */
+
+.page-pinpal .case-hero{
+  background: transparent;   /* remove the big hero background */
+  border-bottom: none;       /* remove bottom line */
+  padding: 32px 0 0;         /* smaller spacing */
+}
+
+/* PINPAL: single-column hero (no image) */
+.page-pinpal .case-hero__inner{
+  grid-template-columns: 1fr;
+}
+
+
+/* remove the white box around image */
+.page-pinpal .case-hero__frame{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* optional: keep image clean */
+.page-pinpal .case-hero__frame img{
+  border-radius: 18px;  /* keep rounded image only (or set 0 if you want sharp) */
+}
+
+
+/* PINPAL – Goals extra content */
+
+.page-pinpal .goals+extra,
+.page-pinpal .goals-extra{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;              /* smaller gap */
+  max-width: 900px;       /* key: stops it stretching too wide */
+  width: 100%;
+}
+.page-pinpal .goals-block h3{
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.page-pinpal .goals-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-pinpal .goals-list li{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.page-pinpal .goals-list li::before{
+  content: "•";
+  color: var(--brand-2);
+  margin-right: 10px;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .page-pinpal .goals-extra{
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+/* PINPAL – Goals side by side */
+.page-pinpal .goals-extra{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 👈 side by side */
+  gap: 64px;
+  margin-top: 40px;
+}
+/* ===== PINPAL ONLY: force logo visible (won't affect other pages) ===== */
+.page-pinpal .nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-pinpal .brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-pinpal .nav-logo{
+  height: 44px;
+  width: auto;
+  display: block;
+}
+/* ===== PINPAL: Fix logo size only on this page ===== */
+.page-pinpal 
+  .nav-logo{
+  width: 120px;
+  height: auto;
+  display: block;
+  transition: width .25s ease;
+}
+/* =========================
+   DIGITAL HEALTH —
+   ========================= */
+
+/* HERO section background + spacing */
+.page-digital-health .case-hero{
+  background: var(--bg-soft);     /* same as your other hero bg */
+  border-bottom: none;            /* removes the line */
+  padding: 64px 0 46px;           /* same spacing as your base hero */
+}
+
+/* DIGITAL HEALTH HERO — spread like the example (text left, image right) */
+.page-digital-health .case-hero__inner{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 64px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* LEFT text | RIGHT image */
+  gap: 56px;
+  align-items: center;
+}
+
+/* Left content: force left alignment */
+.page-digital-health .case-hero__left{
+  text-align: left;
+}
+
+/* DIGITAL HEALTH — Bigger Orange UI/UX */
+
+body.page-digital-health .case-hero__kicker{
+  font-size: 58px !important;   /* try 28 first (or 32) */
+  font-weight: 900 !important;
+  letter-spacing: 0.10em !important;
+  color: #ffb678 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Duration card stays the same but you can slightly widen it */
+.page-digital-health .case-hero__meta{
+  max-width: 320px;
+}
+
+/* Back to work button spacing */
+.page-digital-health .case-hero__btn{
+  margin-top: 14px;
+}
+
+/* ✅ REMOVE / HIDE ANY HERO IMAGE IF IT'S STILL IN YOUR HTML */
+.page-digital-health .case-hero__right,
+.page-digital-health .case-hero__frame,
+.page-digital-health .case-hero__frame img{
+  display: none !important;
+}
+
+/* Mobile spacing */
+@media (max-width: 900px){
+  .page-digital-health .case-hero__inner{
+    padding: 0 24px;
+  }
+}
+/* =========================
+   DIGITAL HEALTH CONTENT
+   ========================= */
+
+.page-dhw-content{
+  background: #fff9ee;
+}
+
+/* layout */
+.case-layout{
+  display: grid;
+  grid-template-columns: 340px 1fr; /* ⬅️ wider sidebar */
+  gap: 80px;
+  padding: 100px 64px;
+}
+
+.page-digital-health .case-content{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* sidebar */
+.case-sidebar{
+  position: sticky;
+  top: 120px;
+}
+
+.case-sidebar .kicker{
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  color: #f39a4a;
+  margin-bottom: 16px;
+  border-bottom: 3px solid #ffb678;
+  padding-bottom: 8px;
+}
+
+.case-sidebar nav a{
+  display: block;
+  font-weight: 800;
+  margin: 14px 0;
+  text-decoration: none;
+  color: #0b1f3a;
+}
+
+.case-sidebar nav a.active{
+  color: #ffb678;
+}
+
+/* content */
+.case-content section{
+  margin-bottom: 120px;
+}
+
+.section-title{
+  font-size: 64px;
+  font-weight: 900;
+  color: #ffb678;
+  margin-bottom: 32px;
+}
+
+/* two column row */
+.two-col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+h3{
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #0b1f3a;
+}
+
+/* pill list */
+.pill-list{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill-list li{
+  font-weight: 700;
+  color: #0b1f3a;
+}
+
+/* goals cards */
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.goal-card{
+  border: 3px solid #8fb7ff;
+  border-radius: 24px;
+  padding: 60px 20px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+  color: #0b1f3a;
+  background: #fff9ee;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .case-layout{
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+  }
+
+  .case-sidebar{
+    position: static;
+  }
+
+  .two-col{
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .section-title{
+    font-size: 44px;
+  }
+}
+.skills-list{
+  padding-left: 0;
+  margin: 0;
+}
+
+.goal-item{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0b1f3a;
+}
+
+.goal-icon{
+  width: 32px;
+  height: 32px;
+  stroke-width: 2.5;
+  color: #ffb678;
+  flex-shrink: 0;
+}
+
+.goals-list {
+  margin-top: 24px;
+  padding-left: 22px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #0b1f3a;
+}
+
+.goals-list li {
+  margin-bottom: 12px;
+}
+.goals-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.goals-list li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.goals-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffb678;
+  font-weight: bold;
+}
+
+.section-divider{
+  width: 100%;
+  max-width: 1200px;        /* keeps it centered like your content */
+  height: 3px;
+  background: #8fb7ff;     /* soft blue line */
+  margin: 80px auto;       /* space above & below */
+  border-radius: 2px;
+}
+.page-digital-health{
+  background: var(--bg-soft); /* cream page background */
+}
+
+.page-digital-health .case-hero{
+  background: var(--bg-soft); /* SAME as page */
+  border-bottom: none;
+  padding: 120px 0 80px; /* control spacing */
+}
+
+/* =========================
+   WIREFRAMES SECTION
+   ========================= */
+
+.wireframes-section{
+  background: var(--bg-soft);   /* same cream background */
+  padding: 120px 0;
+  text-align: center;           /* centers the heading */
+}
+
+/* Title */
+.wireframes-section .section-title{
+  font-size: clamp(48px, 6vw, 90px);
+  color: #ffb678;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 60px;
+}
+
+/* =========================
+   FIGMA EMBED CONTAINER
+   ========================= */
+
+.figma-wrapper{
+  width: 100%;
+  max-width: 1600px;            /* BIG and centered */
+  height: 900px;
+
+  margin: 0 auto;               /* 🔥 centers it */
+  background: #ffffff;
+  padding: 20px;
+
+  border-radius: 28px;
+  border: 4px solid #8fb7ff;
+  box-shadow: 0 20px 44px rgba(0,0,0,0.18);
+}
+
+/* iframe */
+.figma-wrapper iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 18px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 900px){
+  .figma-wrapper{
+    height: 520px;
+    padding: 14px;
+  }
+}
+
+.page-digital-health .case-hero__meta{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  max-width: none;
+  margin-bottom: 18px; /* optional */
+}
+/* DIGITAL HEALTH HERO — image + text (use your dhw class) */
+.page-digital-health .case-hero__inner--dhw{
+  max-width: 1400px;
+  margin: 0;
+  padding: 0 64px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* TEXT | IMAGE */
+  gap: 80px;
+  align-items: center;
+}
+
+/* Image box (right side) */
+.page-digital-health .case-hero__image{
+  display: flex;
+  justify-content: flex-end; /* pushes image to the right */
+}
+
+/* Image styling */
+.page-digital-health .case-hero__image img{
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+/* Text stays left */
+.page-digital-health .case-hero__left{
+  text-align: left;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .page-digital-health .case-hero__inner--dhw{
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .page-digital-health .case-hero__image{
+    justify-content: left;
+    order: -1; /* image on top on mobile */
+  }
+}
+
+
+/* Image styling */
+.case-hero__image img{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+/* Text stays left-aligned */
+.page-digital-health .case-hero__left{
+  text-align: left;
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* so headings don't get hidden behind top nav when clicking */
+.case-content section{
+  scroll-margin-top: 120px;
+}
+
+.case-sidebar nav a{
+  display: block;
+  font-weight: 800;
+  margin: 14px 0;
+  text-decoration: none;
+  color: #0b1f3a;
+  transition: color .2s ease;
+}
+
+.case-sidebar nav a:hover{
+  color: #ffb678;
+}
+
+.case-sidebar nav a.active{
+  color: #ffb678;
+}
+.case-sidebar{
+  position: sticky;
+  top: 120px;   /* adjust if needed */
+  height: fit-content;
+  align-self: start;
+}
+
+/* DIGITAL HEALTH — typography override (safe for launch) */
+.page-digital-health p,
+.page-digital-health li{
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+  font-weight: 500 !important;
+}
+
+.page-digital-health .case-hero__title{
+  font-size: 52px !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+}
+
+.page-digital-health .section-title{
+  font-size: 40px !important;
+  font-weight: 900 !important;
+}
+
+.page-digital-health h3{
+  font-size: 28px !important;
+  font-weight: 700 !important;
+}
+
+.page-digital-health strong,
+.page-digital-health b{
+  font-weight: 700 !important;
+}
+/* =========================
+   DIGITAL HEALTH
+   ========================= */
+
+.page-digital-health p,
+.page-digital-health li{
+  font-weight: 600 !important;   /* bold but readable */
+}
+
+/* slightly stronger emphasis */
+.page-digital-health strong,
+.page-digital-health b{
+  font-weight: 700 !important;
+}
+.blue-margin{
+  display: inline-block;
+  padding: 24px;                 /* 👈 this is the “margin” look */
+  background: #8fb7ff;           /* blue color */
+  border-radius: 32px;           /* rounded outside */
+}
+
+.blue-margin img{
+  display: block;
+  border-radius: 20px;           /* rounded image */
+  background: #fff;              /* keeps image clean */
+}
+
+/* =========================
+   DIGITAL HEALTH — SVG HERO SHAPES (FINAL)
+   ========================= */
+
+/* hero container */
+.page-digital-health .case-hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* container for decorative shapes */
+.page-digital-health .dh-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* keep hero content above shapes */
+.page-digital-health .case-hero__inner{
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   SHAPE ANIMATIONS (FASTER, CLEAN)
+   ========================= */
+
+/* left shape */
+.page-digital-health .dh-shape--left{
+  animation: dhFloatLeft 12s ease-in-out infinite;
+}
+
+/* right shape */
+.page-digital-health .dh-shape--right{
+  animation: dhFloatRight 14s ease-in-out infinite;
+}
+
+/* orange dot */
+.page-digital-health .dh-dot{
+  animation: dhDotFloat 8s ease-in-out infinite;
+}
+
+/* =========================
+   KEYFRAMES
+   ========================= */
+
+@keyframes dhFloatLeft{
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-28px) rotate(2deg);
+  }
+}
+
+@keyframes dhFloatRight{
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(-2deg);
+  }
+}
+
+@keyframes dhDotFloat{
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+@media (prefers-reduced-motion: reduce){
+  .page-digital-health .dh-shape--left,
+  .page-digital-health .dh-shape--right,
+  .page-digital-health .dh-dot{
+    animation: none !important;
+  }
+}
+/* =========================
+   DIGITAL HEALTH — CONTENT SIDE SHAPES
+   ========================= */
+
+/* make content a positioning parent */
+.page-digital-health .case-content{
+  position: relative;
+  z-index: 1;
+}
+
+/* decor layer sits behind text but still visible */
+.page-digital-health .content-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* make sure sections appear above shapes */
+.page-digital-health .case-content > section{
+  position: relative;
+  z-index: 2;
+}
+
+/* shape base */
+.page-digital-health .content-shape{
+  position: absolute;
+  width: 620px;
+  height: auto;
+  opacity: 0.12;
+  filter: blur(0px);
+}
+
+/* left side */
+.page-digital-health .content-shape--left{
+  left: -360px;
+  top: 180px;
+  animation: contentFloatLeft 18s ease-in-out infinite;
+}
+
+/* right side */
+.page-digital-health .content-shape--right{
+  right: -360px;
+  top: 760px; /* pushes it near Planning/Wireframes */
+  animation: contentFloatRight 22s ease-in-out infinite;
+}
+
+/* animations */
+@keyframes contentFloatLeft{
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-38px); }
+}
+
+@keyframes contentFloatRight{
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-28px); }
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .page-digital-health .content-shape{
+    opacity: 0.08;
+    width: 480px;
+  }
+
+  .page-digital-health .content-shape--left{
+    left: -300px;
+  }
+
+  .page-digital-health .content-shape--right{
+    right: -300px;
+  }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .page-digital-health .content-shape--left,
+  .page-digital-health .content-shape--right{
+    animation: none !important;
+  }
+}
+.page-digital-health .nav-inner{
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+/* ===== FORCE DIGITAL HEALTH NAV LOGO LEFT (PUT THIS AT VERY BOTTOM) ===== */
+body.page-digital-health .nav .nav-inner{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* if logo still feels inset, force brand to the edge */
+body.page-digital-health .nav .brand{
+  margin-left: 0 !important;
+}
+/* Back to Work — oval pill + orange hover */
+.page-digital-health .case-hero__btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 18px 46px;         /* makes it more pill/oval */
+  border-radius: 999px;        /* ✅ perfect oval */
+  background: #3B82F6;         /* your blue */
+  color: #0b1f3a;              /* dark text like screenshot */
+  font-weight: 900;
+  font-size: 28px;
+  text-decoration: none;
+
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+/* hover = orange */
+.page-digital-health .case-hero__btn:hover{
+  background: #ffb678;         /* ✅ orange hover */
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+}
+/* Arrow animation */
+.page-digital-health .case-hero__btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* smooth transition */
+.page-digital-health .btn-arrow{
+  display: inline-block;
+  transition: transform .25s ease;
+}
+
+/* hover animation */
+.page-digital-health .case-hero__btn:hover .btn-arrow{
+  transform: translateX(-6px); /* slides left */
+}
+@keyframes arrowSlide{
+  0%,100%{ transform: translateX(0); }
+  50%{ transform: translateX(-6px); }
+}
+
+.page-digital-health .btn-arrow{
+  animation: arrowSlide 1.2s ease-in-out infinite;
+}
+/* =========================
+   digital-health SHAPES
+   ========================= */
+
+body.page-digital-health{
+  position: relative;
+  overflow-x: hidden;
+}
+
+body.page-digital-health .page-decor{
+  position: absolute;   /* changed from fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* content above shapes */
+body.page-digital-health .nav,
+body.page-digital-health main,
+body.page-digital-health footer,
+body.page-digital-health .sb-hero{
+  position: relative;
+  z-index: 2;
+}
+
+/* base style */
+body.page-digital-health .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ===== FINAL POSITIONS (flipped layout) ===== */
+
+/* Big triangle / polygon (LEFT side now) */
+body.page-digital-health .shape-poly{
+  left: -300px;
+  top: -20px;
+  width: clamp(600px, 75vw, 1200px);
+  position: relative;
+}
+
+/* ===== Balanced natural layout ===== */
+
+body.page-digital-health .shape-bcircle{
+  left: 5% !important;
+  right: auto !important;
+  bottom: 220px !important;
+  width: clamp(260px, 38vw, 520px) !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Blue rectangle — upper right */
+body.page-digital-health .shape-brect{
+  right: 80px;
+  top: 120px;
+  width: 320px;
+}
+
+/* Orange circle — mid right */
+body.page-digital-health .shape-circle{
+  right: -150px;
+  top: 45%;
+  width: 300px;
+}
+
+body.page-digital-health .shape-rect2{
+  left: 34%;           /* closer to center */
+  bottom: auto;        /* remove bottom */
+  top: 62%;            /* mid-lower area */
+}
+
+/* Star — upper left */
+body.page-digital-health .shape-star{
+  left: 120px;
+  top: 140px;
+  width: 180px;
+}
+
+/* =========================
+   page-digital-health ANIMATION
+   ========================= */
+
+/* smooth floating */
+
+body.page-digital-health .page-decor .shape{
+  animation: sbFloat 6s ease-in-out infinite;
+}
+
+/* slightly different speeds so they don't sync */
+body.page-digital-health .shape-poly   { animation-duration: 8s; }
+body.page-digital-health .shape-bcircle{ animation-duration: 6s; }
+body.page-digital-health .shape-brect  { animation-duration: 5.5s; }
+body.page-digital-health .shape-circle { animation-duration: 7s; }
+body.page-digital-health .shape-rect2  { animation-duration: 6.5s; }
+body.page-digital-health .shape-star   { animation-duration: 5s; }
+
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-22px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  body.page-studybuddy .page-decor .shape{
+    animation: none !important;
+  }
+}
+/* =========================
+   HOME PAGE — FINAL POLISH 
+   ========================= */
+
+/* Background + overall spacing */
+body{
+  background: #fff9ee; /* cream */
+}
+
+/* Make container match the screenshot spacing */
+.container{
+  max-width: 1100px;
+  padding: 0 56px;
+}
+
+/* NAV spacing */
+.nav{
+  padding: 26px 0;
+  background: transparent;
+}
+
+.nav-inner{
+  max-width: 1200px;
+  padding: 0 56px;
+}
+
+
+/* Capsule menu like screenshot */
+.menu{
+  padding: 20px 48px;
+  gap: 38px;
+  border-radius: 999px;
+  background: #3B82F6;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+}
+
+.nav .menu a{
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* HERO spacing */
+.hero{
+  padding: 70px 0 10px;  /* big top breathing space */
+}
+
+/* Headline size/weight like screenshot */
+.hero h1{
+  font-size: clamp(56px, 6vw, 84px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* Lead text width + spacing */
+.lead{
+  max-width: 62ch;
+  font-size: 22px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* Skill pills row */
+.skill-strip{
+  margin-top: 20px;
+  margin-bottom: 18px;
+  gap: 14px;
+}
+
+.skill-strip li{
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 800;
+  border-radius: 999px;
+  border: 2px solid rgba(59,130,246,0.30);
+  background: #fff;
+}
+
+
+.hero-actions{
+  margin-top: 8px;
+  gap: 14px;
+}
+
+.btn{
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.btn-primary{
+  background: #3B82F6;
+  color: #0f172a;
+}
+
+.btn-primary:hover{
+  transform: translateY(-1px);
+}
+
+.btn-ghost{
+  background: transparent;
+  border: 2px solid rgba(0,0,0,0.18);
+  color: #3b3b3b;
+}
+
+/* ARTICLES like screenshot */
+.article{
+  max-width: 1100px;
+  padding: 0 56px;
+  margin: 90px auto;
+}
+
+.article h2{
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.article p{
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 80ch;
+}
+
+/* Image card centered with shadow */
+.article-images{
+  margin: 30px 0 12px;
+  justify-content: center;
+}
+
+.article-images img{
+  max-width: 640px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+/* Caption */
+figure figcaption{
+  margin-top: 14px;
+  font-size: 18px;
+  color: #0f172a;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* PDF link line like screenshot */
+.article a{
+  font-size: 22px;
+  font-weight: 800;
+  color: #3B82F6;
+}
+
+/* Footer bar like screenshot */
+.footer{
+  background: #3B82F6;
+  padding: 42px 18px;
+  color: #0f172a;
+  font-size: 22px;
+  opacity: 1;
+}
+
+.footer a{
+  color: #0f172a;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 900px){
+  .container, .nav-inner, .article{
+    padding: 0 24px;
+  }
+
+  .nav .menu a{
+    font-size: 18px;
+  }
+
+  .hero{
+    padding-top: 40px;
+  }
+
+  .article h2{
+    font-size: 32px;
+  }
+}
+
+/* =====  About HERO DECOR (FINAL CLEAN) ===== */
+
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* shapes layer */
+.hero-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;           /* behind content */
+}
+
+/* shapes */
+.hero-decor img{
+  position: absolute;
+  display: block;
+  height: auto;
+  max-width: none;
+  z-index: 0;
+  opacity: 0.22;        /* 🔥 THIS is the key */
+}
+
+/* hero content above */
+.hero .container{
+  position: relative;
+  z-index: 5;
+}
+
+/* ---- POSITIONS (your layout) ---- */
+
+/* orange stays right */
+.hero-decor .shape-rect{
+  right: -160px;
+  top: 160px;
+  width: 640px;
+}
+
+/* blue in middle */
+.hero-decor .shape-polygon{
+  left: 55%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  width: 560px;
+}
+
+/* ellipse bottom */
+.hero-decor .shape-ellipse{
+  left: 50%;
+  bottom: -360px;
+  transform: translateX(-50%);
+  width: 900px;
+}
+
+.lets-talk {
+  position: relative;
+  padding: 12px 20px;
+  border: 2px solid #2f6bff;
+  color: #2f6bff;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: color 300ms ease;
+  z-index: 1;
+}
+
+/* ORANGE FILL */
+.lets-talk::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffb678;
+
+  border-radius: inherit;   /* 🔥 IMPORTANT FIX */
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+
+  z-index: -1;
+}
+
+.lets-talk:hover {
+  color: white;
+}
+
+.lets-talk:hover::before {
+  transform: scaleX(1);
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0.4, 0, 0.2, 1); }
+  70% { box-shadow: 0 0 0 12px rgba(135, 166, 244, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47,107,255,0); }
+}
+/* ===== ABOUT HOBBIES SECTION ===== */
+
+.about-hobbies{
+  padding: 80px 0;
+}
+
+.section-title{
+  font-size: 48px;
+  color: #f2a760;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hobby-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.hobby-card{
+  background: rgba(255,255,255,0.4);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #7ea0c9;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hobby-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.hobby-icon{
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hobby-card h3{
+  margin-bottom: 10px;
+  color: #13294b;
+}
+
+.hobby-card p{
+  color: #3c4a5c;
+  line-height: 1.6;
+}
+.hobby-card{
+  transition: transform .35s ease, box-shadow .35s ease;
+  will-change: transform;
+}
+
+.hobby-card:hover,
+.hobby-card:focus-within,
+.hobby-card.is-active{
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.38);
+  position: relative;
+  z-index: 2;
+}
+/* =========================
+   ABOUT — MY TOOLS
+   ========================= */
+
+.about-tools{
+  padding: 90px 0;
+}
+
+.tools-title{
+  font-size: 56px;
+  font-weight: 900;
+  color: #f39a4a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 26px;
+}
+
+.tools-sub{
+  font-size: 34px;
+  font-weight: 900;
+  color: #0b1f3a;
+  margin: 0 0 28px;
+}
+
+.tools-sub--space{
+  margin-top: 60px;
+}
+
+.tools-grid{
+  display: grid;
+  gap: 46px;
+  align-items: start;
+}
+
+.tools-grid--6{
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.tools-grid--4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tool{
+  text-align: center;
+}
+
+.tool img{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.tool p{
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f39a4a;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .tools-box{
+    padding: 34px;
+  }
+
+  .tools-grid--6{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tools-grid--4{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.tool-icon{
+  font-size: 60px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.tool-logo{
+  width: 72px;
+  height: 72px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.tool:hover .tool-logo{
+  transform: translateY(-6px);
+  transition: transform .25s ease;
+}
+  /* ===== Modern scroll reveal ===== */
+.reveal{
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.8,.2,1),
+    filter .7s ease;
+  will-change: transform, opacity, filter;
+}
+
+/* directions */
+.reveal.from-left{ transform: translateX(-36px); }
+.reveal.from-right{ transform: translateX(36px); }
+.reveal.from-up{ transform: translateY(28px); }
+
+/* active */
+.reveal.is-visible{
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0,0);
+}
+
+/* stagger delay */
+.reveal{
+  transition-delay: var(--d, 0ms);
+}
+
+
+/* hover animation */
+.tool img,
+.tool-icon{
+  transition: transform .25s ease;
+}
+
+.tool:hover img,
+.tool:hover .tool-icon{
+  transform: translateY(-8px) scale(1.03);
+}
+/* ===== FLOATING ANIMATION ===== */
+
+@keyframes floatImg {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.about-tools .tool img,
+.about-tools .tool .tool-icon{
+  animation: floatImg 4s ease-in-out infinite;
+}
+
+/* Optional: slight delay so they don't move same time */
+.about-tools .tool:nth-child(1) img { animation-delay: 0s; }
+.about-tools .tool:nth-child(2) img { animation-delay: .5s; }
+.about-tools .tool:nth-child(3) img { animation-delay: 1s; }
+.about-tools .tool:nth-child(4) img { animation-delay: 1.5s; }
+.about-tools .tool:nth-child(5) img { animation-delay: 2s; }
+.about-tools .tool:nth-child(6) img { animation-delay: 2.5s; }
+
+.about-tools .tool:nth-child(1) .tool-icon { animation-delay: 0s; }
+.about-tools .tool:nth-child(2) .tool-icon { animation-delay: .5s; }
+.about-tools .tool:nth-child(3) .tool-icon { animation-delay: 1s; }
+.about-tools .tool:nth-child(4) .tool-icon { animation-delay: 1.5s; }
+
+/* ===== StudyBuddy page tweaks ===== */
+.page-studybuddy .case-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.page-studybuddy .case-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 90px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.page-studybuddy .case-content p{
+  max-width: 720px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.page-studybuddy .case-nav{
+  position: sticky;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.page-studybuddy .case-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a1a1a;
+  opacity: 0.75;
+  transition: 0.2s ease;
+}
+
+.page-studybuddy .case-nav a:hover{ opacity: 1; }
+
+.page-studybuddy .case-section{
+  margin-bottom: 80px;
+}
+
+.page-studybuddy .case-image{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 12px;
+}
+
+@media (max-width: 900px){
+  .page-studybuddy .case-grid{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .page-studybuddy .case-sidebar{ display: none; }
+}
+/* =========================
+   STUDYBUDDY TRIANGLE HERO
+   ========================= */
+
+.page-studybuddy .sb-hero__inner{
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* LEFT text */
+.page-studybuddy .sb-hero__kicker{
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1;
+  color: #FFC07A;
+  margin: 0 0 18px;
+  letter-spacing: 0.02em;
+}
+
+.page-studybuddy .sb-hero__title{
+  font-size: clamp(52px, 6vw, 92px);
+  line-height: 0.95;
+  margin: 0 0 18px;
+  color: #000;
+  font-weight: 900;
+}
+.page-studybuddy .case-content h2{
+  color: #FFC07A;      /* orange */
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+.page-studybuddy .case-content p{
+  font-weight: 600;
+  line-height: 1.8;
+  color: #1f2a44;
+}
+.page-studybuddy .case-nav a{
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 26px;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.page-studybuddy .case-nav a:hover{
+  color: #FFC07A;
+}
+
+/* Active (clicked) */
+.page-studybuddy .case-nav a.active{
+  color: #e4a762;
+  text-decoration: underline;
+  text-decoration-color: #FFC07A;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 3px;
+}
+.page-studybuddy{
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 36px;
+  color: #000;
+}
+.page-studybuddy .sb-hero{
+  position: relative;
+  padding: 120px 0 80px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+.page-studybuddy .sb-hero__btn:hover{
+  transform: translateY(-2px);
+  opacity: .97;
+}
+
+.page-studybuddy .sb-hero__arrow{
+  font-size: 34px;
+  line-height: 1;
+}
+
+.page-studybuddy .sb-phone{
+  background: transparent;
+  padding: 0;
+  border-radius: 24px;
+  border: 1.5px solid rgba(123, 168, 255, 0.6);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+  overflow: hidden;   /* important */
+  display: inline-block;
+}
+.page-studybuddy .sb-phone{
+  background: #fff;
+  padding: 2px;
+  border-radius: 24px;
+  border: 5.5px solid rgba(123, 168, 255, 0.6);
+  overflow: hidden;
+  display: inline-block;
+}
+/* responsive */
+@media (max-width: 900px){
+  .page-studybuddy .sb-hero__inner{
+    grid-template-columns: 1fr;
+  }
+  .page-studybuddy .sb-hero::before{
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 90%);
+  }
+  .page-studybuddy .sb-hero__kicker{ font-size: 44px; }
+  .page-studybuddy .sb-hero__duration{ font-size: 22px; }
+}
+.page-studybuddy .sb-hero__title{
+  margin-bottom: 22px;
+}
+
+.sb-duration{
+  margin-top: 8px;
+  margin-bottom: 36px;
+  font-weight: 600;
+}
+.back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  font-size: 26px;
+  font-weight: 600;
+  color: #1f2a44;
+
+  text-decoration: none;
+  position: relative;
+}
+
+.back-link::after{
+  content: "";
+  position: absolute;
+  left: 42px;      /* keeps arrow not underlined */
+  bottom: -4px;
+  width: calc(100% - 42px);
+  height: 2px;
+  background: #1f2a44;
+}
+
+.back-link:hover{
+  opacity: 0.7;
+}
+.back-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #4F84E8;      /* blue */
+  color: #fff;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  padding: 18px 42px;
+  border-radius: 60px;      /* pill shape */
+
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.back-btn:hover{
+  background: #FFC07A;   /* your orange */
+  color: #ffffff;           /* better contrast on orange */
+  transform: translateY(-2px);
+}
+.back-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #4F84E8;
+  color: #fff;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  padding: 18px 42px;
+  border-radius: 60px;
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.back-btn .arrow{
+  transition: transform 0.25s ease;
+}
+
+/* Hover */
+.back-btn:hover{
+  background: #FFC07A;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.back-btn:hover .arrow{
+  transform: translateX(-6px);
+}
+.page-studybuddy .skill-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 60px;
+  margin-top: 18px;
+}
+
+.page-studybuddy .skill-chip{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 22px;     /* match body size */
+  font-weight: 600;    /* not 900 */
+  color: #1f2a44;      /* same dark blue used elsewhere */
+}
+
+.page-studybuddy .skill-ic{
+  width: 26px;         /* smaller */
+  height: 26px;
+  flex-shrink: 0;
+
+  transform: translateY(3px); /* align to text baseline */
+  opacity: 0.85;       /* softer so it doesn’t overpower text */
+}
+
+.page-studybuddy .skill-chip:hover .skill-ic{
+  color:#FFC07A;
+}
+/* ===== Goals Cards (StudyBuddy style) ===== */
+.case-heading{
+  font-size: 46px;
+  font-weight: 900;
+  margin: 0 0 28px;
+  color: #000;
+}
+
+/* wrapper */
+.goal-cards{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 34px;
+  justify-items: center;
+  align-items: stretch;
+
+  margin-top: 10px;
+  margin-bottom: 26px;
+}
+
+/* cards sizing */
+.goal-cards .goal-card{
+  width: 100%;
+  max-width: 420px;
+}
+
+/* 3rd card centered on new row */
+.goal-cards .goal-card:nth-child(3){
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 420px;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .goal-cards{
+    grid-template-columns: 1fr;
+  }
+  .goal-cards .goal-card:nth-child(3){
+    grid-column: auto;
+    max-width: 100%;
+  }
+}
+/* responsive */
+@media (max-width: 980px){
+  .goal-cards{ grid-template-columns: 1fr; }
+  .goal-card{ min-height: auto; }
+  .goal-summary{ font-size: 22px; }
+}
+
+/* icon wrapper (NEW) */
+.goal-icon{
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px;     /* centers + adds spacing */
+  display: grid;
+  place-items: center;
+  color: #FFC07A;
+}
+
+/* if you're using <img> icons */
+.goal-icon img{
+  width: 44px;
+  height: 44px;
+  display: block;
+  object-fit: contain;
+}
+
+/* if you're using inline SVG icons */
+.goal-icon svg{
+  width: 44px;
+  height: 44px;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* keep title/text aligned nicely */
+.goal-card{
+  text-align: center;
+  padding-top: 34px; /* gives top breathing room */
+}
+.goal-card{
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.goal-card:hover{
+  border-color: #FFC07A;          /* orange border */
+  transform: translateY(-6px);    /* slight lift */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Title turns orange */
+.goal-card:hover .goal-title{
+  color: #FFC07A;
+}
+
+/* Icon becomes stronger orange */
+.goal-card:hover .goal-icon{
+  color: #ff9a3d;
+}
+
+/* Blue line above heading */
+.case-section h2::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: rgba(123,168,255,0.35); /* soft blue */
+  margin-bottom: 28px;
+}
+/* REMOVE that thin gray line above the blue line (StudyBuddy only) */
+.page-studybuddy .case-wrapper,
+.page-studybuddy .case-grid,
+.page-studybuddy .case-sidebar,
+.page-studybuddy .case-content,
+.page-studybuddy .case-section{
+  border-top: 0 !important;
+}
+
+/* kill any “fake lines” made using pseudo-elements */
+.page-studybuddy .case-wrapper::before,
+.page-studybuddy .case-grid::before,
+.page-studybuddy .case-content::before,
+.page-studybuddy .case-section::before{
+  content: none !important;
+  display: none !important;
+}
+
+/* if it’s an <hr> */
+.page-studybuddy hr{
+  display: none !important;
+}
+/* Figma wireframes embed */
+.case-figma-embed{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.case-figma-embed iframe{
+  width: 100%;
+  height: 550px;  /* adjust if you want taller or shorter */
+  border: none;
+}
+.page-studybuddy .case-figma-embed{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.page-studybuddy .case-figma-embed iframe{
+  width: 100%;
+  height: 650px;
+  border: none;
+}
+/* =========================
+   STUDYBUDDY DECOR SHAPES
+   ========================= */
+
+body.page-studybuddy{
+  position: relative;
+  overflow-x: hidden;
+}
+
+body.page-studybuddy .page-decor{
+  position: absolute;   /* changed from fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* content above shapes */
+body.page-studybuddy .nav,
+body.page-studybuddy main,
+body.page-studybuddy footer,
+body.page-studybuddy .sb-hero{
+  position: relative;
+  z-index: 2;
+}
+
+/* base style */
+body.page-studybuddy .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ===== FINAL POSITIONS (flipped layout) ===== */
+
+/* Big triangle / polygon (LEFT side now) */
+body.page-studybuddy .shape-poly{
+  left: -300px;
+  top: -20px;
+  width: clamp(600px, 75vw, 1200px);
+  position: relative;
+}
+
+/* ===== Balanced natural layout ===== */
+
+body.page-studybuddy .shape-bcircle{
+  left: 5% !important;
+  right: auto !important;
+  bottom: 220px !important;
+  width: clamp(260px, 38vw, 520px) !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Blue rectangle — upper right */
+body.page-studybuddy .shape-brect{
+  right: 80px;
+  top: 120px;
+  width: 320px;
+}
+
+/* Orange circle — mid right */
+body.page-studybuddy .shape-circle{
+  right: -150px;
+  top: 45%;
+  width: 300px;
+}
+
+body.page-studybuddy .shape-rect2{
+  left: 34%;           /* closer to center */
+  bottom: auto;        /* remove bottom */
+  top: 62%;            /* mid-lower area */
+}
+
+/* Star — upper left */
+body.page-studybuddy .shape-star{
+  left: 120px;
+  top: 140px;
+  width: 180px;
+}
+
+/* =========================
+   STUDYBUDDY SHAPE ANIMATION
+   ========================= */
+
+/* smooth floating */
+
+body.page-studybuddy .page-decor .shape{
+  animation: sbFloat 6s ease-in-out infinite;
+}
+
+/* slightly different speeds so they don't sync */
+body.page-studybuddy .shape-poly   { animation-duration: 8s; }
+body.page-studybuddy .shape-bcircle{ animation-duration: 6s; }
+body.page-studybuddy .shape-brect  { animation-duration: 5.5s; }
+body.page-studybuddy .shape-circle { animation-duration: 7s; }
+body.page-studybuddy .shape-rect2  { animation-duration: 6.5s; }
+body.page-studybuddy .shape-star   { animation-duration: 5s; }
+
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-22px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  body.page-studybuddy .page-decor .shape{
+    animation: none !important;
+  }
+}
+/* =========================
+   PINPAL HERO (StudyBuddy style)
+   ========================= */
+
+.page-pinpal .sb-hero__inner,
+.page-pinpal .pinpal-hero__inner{
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* HERO wrapper */
+.page-pinpal .sb-hero,
+.page-pinpal .pinpal-hero{
+  position: relative;
+  padding: 120px 0 80px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+/* LEFT text */
+.page-pinpal .sb-hero__kicker,
+.page-pinpal .pinpal-hero__kicker{
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1;
+  color: #FFC07A;
+  margin: 0 0 18px;
+  letter-spacing: 0.02em;
+}
+
+.page-pinpal .sb-hero__title,
+.page-pinpal .pinpal-hero__title{
+  font-size: clamp(52px, 6vw, 92px);
+  line-height: 0.95;
+  margin: 0 0 22px;
+  color: #000;
+  font-weight: 900;
+}
+
+/* body text inside case content */
+.page-pinpal .case-content h2{
+  color: #FFC07A;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.page-pinpal .case-content p{
+  font-weight: 600;
+  line-height: 1.8;
+  color: #1f2a44;
+}
+
+/* sidebar nav links */
+.page-pinpal .case-nav a{
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 26px;
+  transition: all 0.25s ease;
+}
+
+.page-pinpal .case-nav a:hover{
+  color: #FFC07A;
+}
+
+.page-pinpal .case-nav a.active{
+  color: #e4a762;
+  text-decoration: underline;
+  text-decoration-color: #FFC07A;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 3px;
+}
+
+/* duration text */
+.page-pinpal .sb-duration,
+.page-pinpal .pinpal-duration{
+  margin-top: 8px;
+  margin-bottom: 36px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+body.page-studybuddy main.case-wrapper{
+  max-width: 1100px !important;
+  margin-left: 60px !important;
+  margin-right: auto !important;
+  padding: 70px 0 110px !important;
+}
+/* BACK BUTTON  */
+.page-pinpal .back-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #4F84E8;
+  color: #fff;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  padding: 18px 42px;
+  border-radius: 60px;
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.page-pinpal .back-btn:hover{
+  background: #FFC07A;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.page-pinpal .back-btn .arrow{
+  transition: transform 0.25s ease;
+}
+
+.page-pinpal .back-btn:hover .arrow{
+  transform: translateX(-6px);
+}
+
+/* RIGHT “phone/card” look */
+.page-pinpal .sb-phone,
+.page-pinpal .pinpal-phone{
+  background: #7BA8FF;
+  border-radius: 24px;
+  padding: 4px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+.page-pinpal .sb-phone img,
+.page-pinpal .pinpal-phone img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  background: #fff;
+}
+
+/* Skills grid */
+.page-pinpal .skill-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 60px;
+  margin-top: 18px;
+}
+
+.page-pinpal .skill-chip{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2a44;
+}
+
+.page-pinpal .skill-ic{
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+
+  transform: translateY(3px);
+  opacity: 0.85;
+}
+
+.page-pinpal .skill-chip:hover .skill-ic{
+  color: #FFC07A;
+}
+
+/* ===== Goals Cards ===== */
+.page-pinpal .case-heading{
+  font-size: 46px;
+  font-weight: 900;
+  margin: 0 0 28px;
+  color: #000;
+}
+
+.page-pinpal .goal-cards{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 34px;
+  justify-items: center;
+  align-items: stretch;
+
+  margin-top: 10px;
+  margin-bottom: 26px;
+}
+
+.page-pinpal .goal-cards .goal-card{
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding-top: 34px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.page-pinpal .goal-cards .goal-card:nth-child(3){
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 420px;
+}
+
+/* icon wrapper */
+.page-pinpal .goal-icon{
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  color: #FFC07A;
+}
+
+.page-pinpal .goal-icon svg{
+  width: 44px;
+  height: 44px;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* hover */
+.page-pinpal .goal-card:hover{
+  border-color: #FFC07A;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.page-pinpal .goal-card:hover .goal-title{
+  color: #FFC07A;
+}
+
+.page-pinpal .goal-card:hover .goal-icon{
+  color: #ff9a3d;
+}
+
+/* Blue line above heading */
+.page-pinpal .case-section h2::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: rgba(123,168,255,0.35);
+  margin-bottom: 28px;
+}
+
+/* remove unwanted thin lines (Pinpal only) */
+.page-pinpal .case-wrapper,
+.page-pinpal .case-grid,
+.page-pinpal .case-sidebar,
+.page-pinpal .case-content,
+.page-pinpal .case-section{
+  border-top: 0 !important;
+}
+
+.page-pinpal .case-wrapper::before,
+.page-pinpal .case-grid::before,
+.page-pinpal .case-content::before,
+.page-pinpal .case-section::before{
+  content: none !important;
+  display: none !important;
+}
+
+.page-pinpal hr{
+  display: none !important;
+}
+
+/* Figma embed */
+.page-pinpal .case-figma-embed{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.page-pinpal .case-figma-embed iframe{
+  width: 100%;
+  height: 650px;
+  border: none;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .page-pinpal .sb-hero__inner,
+  .page-pinpal .pinpal-hero__inner{
+    grid-template-columns: 1fr;
+  }
+  .page-pinpal .sb-hero__kicker,
+  .page-pinpal .pinpal-hero__kicker{
+    font-size: 44px;
+  }
+  .page-pinpal .sb-duration,
+  .page-pinpal .pinpal-duration{
+    font-size: 22px;
+  }
+  .page-pinpal .goal-cards{
+    grid-template-columns: 1fr;
+  }
+  .page-pinpal .goal-cards .goal-card:nth-child(3){
+    grid-column: auto;
+    max-width: 100%;
+  }
+}
+/* =========================
+   PINPAL – Skills & Roles
+   Clean Balanced Version
+   ========================= */
+
+.page-pinpal .pinpal-skills-roles{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+/* Section Headings */
+.page-pinpal .sr-title{
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 20px;
+  color: #0f2542;
+}
+
+/* =========================
+   Skills (Left Side)
+   ========================= */
+
+.page-pinpal .sr-skills{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+}
+
+.page-pinpal .sr-skills li{
+  position: relative;
+  padding-left: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2a44;
+}
+
+/* blue bullet */
+.page-pinpal .sr-skills li::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8fb4f5;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* =========================
+   Roles (Right Side)
+   ========================= */
+
+.page-pinpal .sr-roles{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 26px 40px;
+}
+
+.page-pinpal .sr-role{
+  position: relative;
+  padding-left: 18px;
+}
+
+/* bullet dot beside each name */
+.page-pinpal .sr-role::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8fb4f5;
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+
+.page-pinpal .sr-name{
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f2542;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.page-pinpal .sr-job{
+  font-size: 18px;
+  font-weight: 600;
+  color: #8fb4f5;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 980px){
+  .page-pinpal .pinpal-skills-roles{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .page-pinpal .sr-roles{
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 600px){
+  .page-pinpal .sr-roles{
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   PINPAL SHAPES (keep polygon, move others down)
+   ========================= */
+
+body.page-pinpal{ position: relative; overflow-x: hidden; }
+
+body.page-pinpal .page-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.page-pinpal .nav,
+body.page-pinpal main,
+body.page-pinpal footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* base */
+body.page-pinpal .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ✅ KEEP POLYGON WHERE IT IS (do not touch) */
+body.page-pinpal .shape-poly{
+  left: -300px;
+  top: -60px;
+  width: clamp(600px, 75vw, 1200px);
+  opacity: 0.24;
+}
+
+/* ✅ MOVE EVERYTHING ELSE BELOW THE POLYGON */
+body.page-pinpal .shape-bcircle{
+  left: -25%;
+  right: auto;
+  top: 52%;
+  width: clamp(260px, 38vw, 520px);
+}
+
+body.page-pinpal .shape-brect{
+  right: 80px;
+  top: 62%;
+  width: 320px;
+}
+
+body.page-pinpal .shape-circle{
+  right: -150px;
+  top: 72%;
+  width: 300px;
+}
+
+body.page-pinpal .shape-rect2{
+  left: 34%;
+  top: 85%;
+  width: 220px;
+}
+
+body.page-pinpal .shape-star{
+  left: 300px;
+  top: 70%;
+  width: 180px;
+}
+
+/* animation */
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body.page-pinpal .page-decor .shape{ animation: none !important; }
+}
+/* ======================
+   PHOTOGRAPHY CASE STUDY 
+   =======================*/
+
+.photography_Project .case-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.photography_Project .case-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 90px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+.photography_Project .case-content p{
+  max-width: 720px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.photography_Project .case-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a1a1a;
+  opacity: 0.75;
+  transition: 0.2s ease;
+  font-size: 28px;
+  margin-bottom: 26px;
+}
+
+.photography_Project .case-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a1a1a;
+  opacity: 0.75;
+  transition: 0.2s ease;
+  font-size: 28px;
+  margin-bottom: 26px;
+}
+
+.photography_Project .case-nav a:hover{ opacity: 1; }
+
+.photography_Project .case-section{
+  margin-bottom: 80px;
+}
+
+.photography_Project .case-image{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* typography matching your StudyBuddy look */
+/* only style non-hero h1 (if any) */
+.photography_Project .case-content h1{
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: #000;
+  font-weight: 900;
+}
+
+.photography_Project .kicker{
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 10px;
+}
+
+.photography_Project .sb-duration{
+  margin-top: 8px;
+  margin-bottom: 36px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+
+/* IMPORTANT: prevent bullet column/float issues */
+.photography_Project ul,
+.photography_Project .bullet{
+  column-count: 1 !important;
+  columns: 1 !important;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .photography_Project .case-grid{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+ .photography_Project .case-sidebar{ display: none; }
+}
+
+/* HERO LAYOUT */
+.photography_Project .sb-hero__inner{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+
+  align-items: start;   /* 🔥 THIS FIXES IT */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 40px;
+}
+  
+.photography_Project .sb-phone{
+  max-width: 480px;   /* smaller */
+  margin-left: auto;  /* push to right */
+  background: #7BA8FF;
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.photography_Project .sb-phone img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+/* Active section highlight (sidebar) */
+.photography_Project .case-nav a.active{
+  color: #FFC07A;
+  opacity: 1;
+  font-weight: 700;
+  position: relative;
+}
+
+.photography_Project .case-nav a.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60%;
+  height: 3px;
+  background: #FFC07A;
+  border-radius: 3px;
+}
+/* =======================
+   Skill Cards
+======================= */
+
+.photography_Project .skill-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.photography_Project .skill-card{
+  background: #f8f6f1;
+  border: 2px solid #7BA8FF;
+  border-radius: 24px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.photography_Project .skill-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-color: #FFC07A;
+}
+
+.photography_Project .skill-icon{
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.photography_Project .skill-card h3{
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+.photography_Project .skill-card p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .photography_Project .skill-grid{
+    grid-template-columns: 1fr;
+  }
+}
+/* =======================
+   Goals – Horizontal Cards
+======================= */
+
+.photography_Project .goals-list{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.photography_Project .goal-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+
+  background: #f9f7f2;
+  border-left: 6px solid #FFC07A;
+  padding: 28px 32px;
+  border-radius: 18px;
+
+  transition: 0.3s ease;
+}
+
+.photography_Project .goal-item:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.photography_Project .goal-ic{
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.photography_Project .goal-text h3{
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+.photography_Project .goal-text p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .photography_Project .goal-item{
+    flex-direction: column;
+  }
+}
+/* Skill hover upgrade */
+.photography_Project .skill-card{
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.photography_Project .skill-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+}
+
+/* Goal hover upgrade */
+.photography_Project .goal-item{
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.photography_Project .goal-item:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.reveal{
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.photography_Project .sb-hero__kicker{
+  font-size: 48px;          /* increase size */
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f59e0b;           /* clean modern orange */
+  margin-bottom: 18px;
+}
+/* =========================
+   photography_Project SHAPES 
+   ========================= */
+
+body.photography_Project{ position: relative; overflow-x: hidden; }
+
+body.photography_Project .page-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.photography_Project .nav,
+body.photography_Project main,
+body.photography_Project footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* base */
+body.photography_Project .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+body.photography_Project .shape-poly{
+  left: -80px;              /* slightly adjust so it doesn’t look cut off */
+  top: -10px;
+  width: clamp(400px, 45vw, 800px);  /* smaller */
+  opacity: 0.30;
+}
+/* ✅ MOVE EVERYTHING ELSE BELOW THE POLYGON */
+body.photography_Project .shape-bcircle{
+  left: -25%;
+  right: auto;
+  top: 52%;
+  width: clamp(260px, 38vw, 520px);
+}
+
+body.photography_Project .shape-brect{
+  right: 80px;
+  top: 62%;
+  width: 320px;
+}
+
+body.photography_Project .shape-circle{
+  right: 0px;
+  top: 42%;
+  width: 300px;
+}
+
+/* KEEP Rectangle 2 EXACT position */
+body.photography_Project .shape-rect2{ 
+  position: absolute;
+  left: 34%;   /* ← use the exact values it currently has */
+  top: 85%;
+  width: 220px;
+  animation: none; /* optional: stop floating if you want it fixed */
+  z-index: 1;
+}
+body.photography_Project .shape-star{
+  left: 400px;
+  top: 72%;
+  width: 180px;
+}
+
+/* animation */
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ======================
+   CD BOOKLET CASE STUDY 
+   (same styling as photography_Project)
+   =======================*/
+
+.cd_booklet .case-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.cd_booklet .case-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 90px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.cd_booklet .case-content p{
+  max-width: 720px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.cd_booklet .case-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a1a1a;
+  opacity: 0.75;
+  transition: 0.2s ease;
+  font-size: 28px;
+  margin-bottom: 26px;
+  display: block;
+}
+
+.cd_booklet .case-nav a:hover{ opacity: 1; }
+
+.cd_booklet .case-section{
+  margin-bottom: 80px;
+}
+
+.cd_booklet .case-image{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* typography */
+.cd_booklet .case-content h1{
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: #000;
+  font-weight: 900;
+}
+
+
+.cd_booklet .sb-duration{
+  margin-top: 8px;
+  margin-bottom: 36px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+
+/* prevent bullet column/float issues */
+.cd_booklet ul,
+.cd_booklet .bullet{
+  column-count: 1 !important;
+  columns: 1 !important;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .cd_booklet .case-grid{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .cd_booklet .case-sidebar{ display: none; }
+}
+
+/* HERO LAYOUT */
+.cd_booklet .sb-hero__inner{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 200px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 40px;
+}
+
+/* image card on right */
+.cd_booklet .sb-phone{
+  max-width: 680px;
+  margin-left: auto;
+  background: #7BA8FF;
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.cd_booklet .sb-phone img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Active section highlight (sidebar) */
+.cd_booklet .case-nav a.active{
+  color: #FFC07A;
+  opacity: 1;
+  font-weight: 700;
+  position: relative;
+}
+
+.cd_booklet .case-nav a.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60%;
+  height: 3px;
+  background: #FFC07A;
+  border-radius: 3px;
+}
+
+/* =======================
+   Skill Cards
+======================= */
+
+.cd_booklet .skill-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.cd_booklet .skill-card{
+  background: #f8f6f1;
+  border: 2px solid #7BA8FF;
+  border-radius: 24px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: 0.35s ease;
+}
+
+.cd_booklet .skill-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+  border-color: #FFC07A;
+}
+
+.cd_booklet .skill-icon{
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.cd_booklet .skill-card h3{
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+.cd_booklet .skill-card p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .cd_booklet .skill-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =======================
+   Goals – Horizontal Cards
+======================= */
+
+.cd_booklet .goals-list{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.cd_booklet .goal-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  background: #f9f7f2;
+  border-left: 6px solid #FFC07A;
+  padding: 28px 32px;
+  border-radius: 18px;
+  transition: 0.35s ease;
+}
+
+.cd_booklet .goal-item:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.cd_booklet .goal-ic{
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.cd_booklet .goal-text h3{
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+.cd_booklet .goal-text p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .cd_booklet .goal-item{
+    flex-direction: column;
+  }
+}
+
+/* reveal animation */
+.cd_booklet .reveal{
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cd_booklet .reveal.active{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.cd_booklet .sb-hero__inner > :first-child{
+  padding-right: 60px;
+}
+.cd_booklet .sb-hero__inner{
+  column-gap: 200px; /* use column-gap instead of gap */
+}
+.cd_booklet .pdf-embed{
+  margin-top: 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(0,0,0,0.10);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.cd_booklet .pdf-embed iframe{
+  width: 100%;
+  height: 800px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 900px){
+  .cd_booklet .pdf-embed iframe{
+    height: 560px;
+  }
+}
+/* FORCE CD BOOKLET DESIGN LABEL */
+.cd_booklet .sb-hero__inner .kicker{
+  font-size: 48px !important;
+  font-weight: 900 !important;
+  color: #FFC07A !important;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+/* =========================
+   cd_bookle SHAPES 
+   ========================= */
+
+body.cd_booklet{ position: relative; overflow-x: hidden; }
+
+body.cd_booklet .page-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.cd_booklet .nav,
+body.cd_booklet main,
+body.cd_booklet footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* base */
+body.cd_booklet .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+body.cd_booklet .shape-poly{
+  left: -80px;              /* slightly adjust so it doesn’t look cut off */
+  top: -10px;
+  width: clamp(400px, 45vw, 800px);  /* smaller */
+  opacity: 0.30;
+}
+/* ✅ MOVE EVERYTHING ELSE BELOW THE POLYGON */
+body.cd_booklet .shape-bcircle{
+  left: -25%;
+  right: auto;
+  top: 52%;
+  width: clamp(260px, 38vw, 520px);
+}
+
+body.cd_booklet .shape-brect{
+  right: 80px;
+  top: 62%;
+  width: 320px;
+}
+
+body.cd_booklet .shape-circle{
+  right: 0px;
+  top: 42%;
+  width: 300px;
+}
+
+/* KEEP Rectangle 2 EXACT position */
+body.cd_booklet .shape-rect2{ 
+  position: absolute;
+  left: 34%;   /* ← use the exact values it currently has */
+  top: 85%;
+  width: 220px;
+  animation: none; /* optional: stop floating if you want it fixed */
+  z-index: 1;
+}
+body.cd_booklet .shape-star{
+  left: 400px;
+  top: 72%;
+  width: 180px;
+}
+
+/* animation */
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ======================
+   SUNRISE CRUNCH CASE STUDY 
+   (same styling as cd_booklet)
+   =======================*/
+
+.sunrise_crunch .case-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.sunrise_crunch .case-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 90px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.sunrise_crunch .case-content p{
+  max-width: 720px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.sunrise_crunch .case-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a1a1a;
+  opacity: 0.75;
+  transition: 0.2s ease;
+  font-size: 28px;
+  margin-bottom: 26px;
+  display: block;
+}
+
+.sunrise_crunch .case-nav a:hover{ opacity: 1; }
+
+.sunrise_crunch .case-section{
+  margin-bottom: 80px;
+}
+
+.sunrise_crunch .case-image{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* typography */
+.sunrise_crunch .case-content h1{
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: #000;
+  font-weight: 900;
+}
+
+.sunrise_crunch .sb-hero__kicker{
+  font-size: 40px;
+  font-weight: 800;
+  color: #F4A261;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.sunrise_crunch .sb-duration{
+  margin-top: 8px;
+  margin-bottom: 36px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+
+/* prevent bullet column/float issues */
+.sunrise_crunch ul,
+.sunrise_crunch .bullet{
+  column-count: 1 !important;
+  columns: 1 !important;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .sunrise_crunch .case-grid{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .sunrise_crunch .case-sidebar{ display: none; }
+}
+
+/* HERO LAYOUT */
+.sunrise_crunch .sb-hero__inner{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 200px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 40px;
+}
+
+/* image card on right */
+.sunrise_crunch .sb-phone{
+  max-width: 680px;
+  margin-left: auto;
+  background: #7BA8FF;
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.sunrise_crunch .sb-phone img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Active section highlight (sidebar) */
+.sunrise_crunch .case-nav a.active{
+  color: #FFC07A;
+  opacity: 1;
+  font-weight: 700;
+  position: relative;
+}
+
+.sunrise_crunch .case-nav a.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60%;
+  height: 3px;
+  background: #FFC07A;
+  border-radius: 3px;
+}
+
+/* =======================
+   Skill Cards
+======================= */
+
+.sunrise_crunch .skill-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.sunrise_crunch .skill-card{
+  background: #f8f6f1;
+  border: 2px solid #7BA8FF;
+  border-radius: 24px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: 0.35s ease;
+}
+
+.sunrise_crunch .skill-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+  border-color: #FFC07A;
+}
+
+.sunrise_crunch .skill-icon{
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.sunrise_crunch .skill-card h3{
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+.sunrise_crunch .skill-card p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .sunrise_crunch .skill-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =======================
+   Goals – Horizontal Cards
+======================= */
+
+.sunrise_crunch .goals-list{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.sunrise_crunch .goal-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  background: #f9f7f2;
+  border-left: 6px solid #FFC07A;
+  padding: 28px 32px;
+  border-radius: 18px;
+  transition: 0.35s ease;
+}
+
+.sunrise_crunch .goal-item:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.sunrise_crunch .goal-ic{
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.sunrise_crunch .goal-text h3{
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+.sunrise_crunch .goal-text p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .sunrise_crunch .goal-item{
+    flex-direction: column;
+  }
+}
+
+/* reveal animation */
+.sunrise_crunch .reveal{
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sunrise_crunch .reveal.active{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.sunrise_crunch .sb-hero__inner > :first-child{
+  padding-right: 60px;
+}
+
+.sunrise_crunch .sb-hero__inner{
+  column-gap: 200px;
+}
+
+.sunrise_crunch .pdf-embed{
+  margin-top: 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(0,0,0,0.10);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.sunrise_crunch .pdf-embed iframe{
+  width: 100%;
+  height: 800px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 900px){
+  .sunrise_crunch .pdf-embed iframe{
+    height: 560px;
+  }
+}
+/* ==========================
+   GOALS – WORKING (borders + icons)
+========================== */
+
+.sunrise_crunch .goals-title-large{
+  font-size: 72px;
+  font-weight: 900;
+  color: #F4A261;
+  margin-bottom: 60px;
+}
+
+.sunrise_crunch .goals-exact-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.sunrise_crunch .goal-exact-card{
+  border-radius: 24px;
+  padding: 55px 30px;
+  text-align: center;
+  background: transparent;
+}
+
+/* ✅ THESE BORDERS ARE REQUIRED */
+.sunrise_crunch .goal-exact-card.blue{
+  border: 4px solid #F4A261;
+}
+.sunrise_crunch .goal-exact-card.orange{
+  border: 4px solid #F4A261;
+}
+
+.sunrise_crunch .goal-exact-card h3{
+  font-size: 26px;
+  font-weight: 900;
+  margin-top: 30px;
+  letter-spacing: 0.5px;
+  color: #1f2a44;
+}
+
+/* ==========================
+   ICON BASE
+========================== */
+
+.sunrise_crunch .goal-icon{
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---------- PRODUCT DESIGN (layers) ---------- */
+.sunrise_crunch .layers-icon::before{
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 3px solid #F4A261;
+  transform: rotate(45deg);
+  top: 2px;
+  left: 50%;
+  margin-left: -14px;
+}
+
+.sunrise_crunch .layers-icon::after{
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background: #F4A261;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 38px;
+  box-shadow: 0 10px 0 #F4A261;
+}
+
+/* ---------- VISUAL IDENTITY (document) ---------- */
+.sunrise_crunch .document-icon{
+  border: 3px solid #F4A261;
+  border-radius: 10px;
+}
+
+.sunrise_crunch .document-icon::before{
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: #F4A261;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 22px;
+  box-shadow: 0 10px 0 #F4A261, 0 20px 0 #F4A261;
+}
+
+/* ---------- 3D VISUALIZATION (clipboard + plus) ---------- */
+.sunrise_crunch .clipboard-icon{
+  border: 3px solid #F4A261;
+  border-radius: 12px;
+}
+
+/* clipboard top clip */
+.sunrise_crunch .clipboard-icon::before{
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 12px;
+  border: 3px solid #F4A261;
+  border-radius: 10px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+}
+
+/* plus sign */
+.sunrise_crunch .clipboard-icon::after{
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 50%;
+  top: 28px;
+  transform: translate(-50%, -50%);
+  background:
+    linear-gradient(#F4A261,#F4A261) center/3px 26px no-repeat,
+    linear-gradient(#F4A261,#F4A261) center/26px 3px no-repeat;
+}
+
+@media (max-width: 1100px){
+  .sunrise_crunch .goals-exact-grid{
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   sunrise_crunch SHAPES 
+   ========================= */
+
+body.sunrise_crunch{ position: relative; overflow-x: hidden; }
+
+body.sunrise_crunch .page-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.sunrise_crunch .nav,
+body.sunrise_crunch main,
+body.sunrise_crunch footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* base */
+body.sunrise_crunch .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+body.sunrise_crunch .shape-poly{
+  left: -80px;              /* slightly adjust so it doesn’t look cut off */
+  top: -10px;
+  width: clamp(400px, 45vw, 800px);  /* smaller */
+  opacity: 0.30;
+}
+/* ✅ MOVE EVERYTHING ELSE BELOW THE POLYGON */
+body.sunrise_crunch .shape-bcircle{
+  left: -25%;
+  right: auto;
+  top: 52%;
+  width: clamp(260px, 38vw, 520px);
+}
+
+body.sunrise_crunch .shape-brect{
+  right: 80px;
+  top: 62%;
+  width: 320px;
+}
+
+body.sunrise_crunch .shape-circle{
+  right: 0px;
+  top: 42%;
+  width: 300px;
+}
+
+/* KEEP Rectangle 2 EXACT position */
+body.sunrise_crunch .shape-rect2{ 
+  position: absolute;
+  left: 34%;   /* ← use the exact values it currently has */
+  top: 85%;
+  width: 220px;
+  animation: none; /* optional: stop floating if you want it fixed */
+  z-index: 1;
+}
+body.sunrise_crunch .shape-star{
+  left: 1350px;
+  top: 72%;
+  width: 180px;
+}
+
+/* animation */
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+/* ======================
+   SWISS POSTER CASE STUDY
+   ======================= */
+
+.swiss_poster .case-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.swiss_poster .case-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 90px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.swiss_poster .case-content p{
+  max-width: 720px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.swiss_poster .case-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a1a1a;
+  opacity: 0.75;
+  transition: 0.2s ease;
+  font-size: 28px;
+  margin-bottom: 26px;
+  display: block;
+}
+
+.swiss_poster .case-nav a:hover{ opacity: 1; }
+
+.swiss_poster .case-section{
+  margin-bottom: 80px;
+}
+
+/* section headings (makes “Skill and tools” look cleaner) */
+.swiss_poster .case-section h2{
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.swiss_poster .case-image{
+  width: 100%;
+  max-width: 860px;
+  margin-top: 18px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* typography (if you ever use h1 inside content) */
+.swiss_poster .case-content h1{
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: #000;
+  font-weight: 900;
+}
+
+.swiss_poster .sb-duration{
+  margin-top: 8px;
+  margin-bottom: 36px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+
+/* HERO */
+.swiss_poster .sb-hero__inner{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  column-gap: 200px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 40px;
+}
+
+.swiss_poster .sb-phone{
+  max-width: 680px;
+  margin-left: auto;
+  background: #FFC07A;
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.swiss_poster .sb-phone img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* sidebar active */
+.swiss_poster .case-nav a.active{
+  color: #FFC07A;
+  opacity: 1;
+  font-weight: 700;
+  position: relative;
+}
+
+.swiss_poster .case-nav a.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60%;
+  height: 3px;
+  background: #FFC07A;
+  border-radius: 3px;
+}
+
+/* PDF embed */
+.swiss_poster .pdf-embed{
+  margin-top: 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(0,0,0,0.10);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.swiss_poster .pdf-embed iframe{
+  width: 100%;
+  height: 800px;
+  border: 0;
+  display: block;
+}
+
+/* FORCE DESIGN LABEL */
+.swiss_poster .sb-hero__inner .kicker{
+  font-size: 48px !important;
+  font-weight: 900 !important;
+  color: #FFC07A !important;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+/* =======================
+   SWISS POSTER – Polished Skill Cards
+======================= */
+.swiss_poster #skills .skill-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-top: 50px;
+}
+
+/* Make the third card span full width and center */
+.swiss_poster #skills .skill-card:nth-child(3){
+  grid-column: 1 / -1;   /* spans full row */
+  max-width: 480px;
+  margin: 0 auto;        /* center it */
+}
+
+.swiss_poster #skills .skill-card{
+  background: rgba(255,255,255,0.55);
+  border: 2px solid rgba(123,168,255,0.6);
+  border-radius: 40px;
+
+  padding: 60px 40px 55px;
+  text-align: center;
+
+  min-height: 560px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.swiss_poster #skills .skill-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.12);
+}
+
+/* ICON */
+.swiss_poster #skills .skill-icon{
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto 35px;
+  font-size: 34px;
+
+  background: rgba(123,168,255,0.2);
+  border: 3px solid rgba(123,168,255,0.4);
+}
+
+/* TITLE */
+.swiss_poster #skills .skill-card{
+  background: rgba(255,255,255,0.55);
+  border: 2px solid rgba(123,168,255,0.6);
+  border-radius: 40px;
+
+  padding: 52px 40px 42px;  /* less bottom padding */
+  text-align: center;
+
+  min-height: 480px;        /* reduce height */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+/* DESCRIPTION */
+.swiss_poster #skills .skill-card p{
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgba(15, 23, 42, 0.8);
+  max-width: 30ch;
+}
+
+/* ORANGE HOVER EFFECT */
+.swiss_poster #skills .skill-card{
+  transition: 
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+.swiss_poster #skills .skill-card:hover{
+  background-color: #FFC07A;
+  border-color: #FFC07A;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+}
+
+/* Change title color on hover */
+.swiss_poster #skills .skill-card:hover h3{
+  color: #0f172a;
+}
+
+/* Change paragraph color on hover */
+.swiss_poster #skills .skill-card:hover p{
+  color: #0f172a;
+}
+
+/* Make icon bubble slightly darker */
+.swiss_poster #skills .skill-card:hover .skill-icon{
+  background: rgba(255,255,255,0.4);
+  border-color: rgba(255,255,255,0.7);
+}
+/* =======================
+   SWISS POSTER – Goals (Premium Swiss layout)
+======================= */
+
+.swiss_poster .goals-num{
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Base row */
+.swiss_poster .goal-row{
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 28px;
+  align-items: center;
+
+  padding: 34px 34px;
+  border-radius: 28px;
+
+  background: rgba(255,255,255,0.55);
+  border: 2px solid rgba(123,168,255,0.50);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+/* Hover = orange accent (not full orange fill) */
+.swiss_poster .goal-row:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.10);
+  border-color: rgba(255,192,122,0.95);
+  background: rgba(255,192,122,0.18);
+}
+
+/* Number badge */
+.swiss_poster .goal-no{
+  width: 78px;
+  height: 78px;
+  border-radius: 20px;
+
+  display: grid;
+  place-items: center;
+
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  color: #1d4079;
+
+  background: rgba(123,168,255,0.16);
+  border: 2px solid rgba(123,168,255,0.30);
+}
+
+/* Badge reacts on hover */
+.swiss_poster .goal-row:hover .goal-no{
+  background: rgba(255,192,122,0.30);
+  border-color: rgba(255,192,122,0.65);
+}
+
+/* Content block */
+.swiss_poster .goal-main{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.swiss_poster .goal-main h3{
+  margin: 0;
+  font-size: clamp(34px, 2.6vw, 52px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.swiss_poster .goal-main p{
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.75;
+  color: rgba(15, 23, 42, 0.70);
+  max-width: 75ch;
+}
+
+/* OPTIONAL: subtle divider line inside each card for Swiss feel */
+.swiss_poster .goal-row::after{
+  content: "";
+  grid-column: 2;
+  height: 1px;
+  margin-top: 14px;
+  background: rgba(15, 23, 42, 0.06);
+  display: none; /* turn ON by changing to block */
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .swiss_poster .goal-row{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 26px 22px;
+  }
+  .swiss_poster .goal-no{
+    width: 70px;
+    height: 70px;
+  }
+  .swiss_poster .goal-main h3{
+    font-size: 30px;
+  }
+  .swiss_poster .goal-main p{
+    font-size: 18px;
+  }
+}
+/* =======================
+   SWISS POSTER – GOALS (Values Card Style: 2 + 2 layout)
+======================= */
+
+.swiss_poster .goals-cards{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 cards per row */
+  gap: 50px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* card */
+.swiss_poster .goal-card{
+  background: rgba(255,255,255,0.45);
+  border: 2px solid rgba(123,168,255,0.55);
+  border-radius: 42px;
+
+  padding: 58px 42px 54px;
+  text-align: center;
+
+  min-height: 520px;
+
+  box-shadow: 0 12px 26px rgba(0,0,0,0.06);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.swiss_poster .goal-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 22px 46px rgba(0,0,0,0.12);
+  border-color: rgba(255,192,122,0.95);
+  background: rgba(255,192,122,0.18);
+}
+
+/* icon circle */
+.swiss_poster .goal-icon{
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto 30px;
+  font-size: 34px;
+
+  background: rgba(123,168,255,0.18);
+  border: 3px solid rgba(123,168,255,0.35);
+}
+
+.swiss_poster .goal-card:hover .goal-icon{
+  background: rgba(255,255,255,0.45);
+  border-color: rgba(255,255,255,0.75);
+}
+
+/* title */
+.swiss_poster .goal-card h3{
+  margin: 0 0 18px;
+  font-size: clamp(28px, 2.1vw, 40px); /* smaller so it doesn’t break ugly */
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+  color: #1d4079;
+
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* body */
+.swiss_poster .goal-card p{
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgba(15, 23, 42, 0.72);
+  max-width: 34ch;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .swiss_poster .goals-cards{
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 640px;
+  }
+
+  .swiss_poster .goal-card{
+    min-height: auto;
+    padding: 40px 24px;
+  }
+
+  .swiss_poster .goal-card h3{
+    font-size: 30px;
+  }
+
+  .swiss_poster .goal-card p{
+    font-size: 18px;
+  }
+}
+/* =========================
+   swiss_poster SHAPES 
+   ========================= */
+
+body.swiss_poster{ position: relative; overflow-x: hidden; }
+
+body.swiss_poster .page-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.swiss_poster .nav,
+body.swiss_poster main,
+body.swiss_poster footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* base */
+body.swiss_poster .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+body.swiss_poster .shape-poly{
+  left: -80px;              /* slightly adjust so it doesn’t look cut off */
+  top: -10px;
+  width: clamp(400px, 45vw, 800px);  /* smaller */
+  opacity: 0.30;
+}
+/* ✅ MOVE EVERYTHING ELSE BELOW THE POLYGON */
+body.swiss_poster .shape-bcircle{
+  left: -25%;
+  right: auto;
+  top: 52%;
+  width: clamp(260px, 38vw, 520px);
+}
+
+body.swiss_poster .shape-brect{
+  right: 80px;
+  top: 62%;
+  width: 320px;
+}
+
+body.swiss_poster .shape-circle{
+  right: 0px;
+  top: 42%;
+  width: 300px;
+}
+
+/* KEEP Rectangle 2 EXACT position */
+body.swiss_poster .shape-rect2{ 
+  position: absolute;
+  left: 34%;   /* ← use the exact values it currently has */
+  top: 85%;
+  width: 220px;
+  animation: none; /* optional: stop floating if you want it fixed */
+  z-index: 1;
+}
+body.swiss_poster .shape-star{
+  left: 1350px;
+  top: 72%;
+  width: 180px;
+}
+
+/* animation */
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+/* ====================
+   VIDEO STORYTELLING — 
+   ==================== */
+
+/* Wrapper / Grid / Typography */
+.video_storytelling .case-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.video_storytelling .case-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 90px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.video_storytelling .case-content p{
+  max-width: 720px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.video_storytelling .case-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a1a1a;
+  opacity: 0.75;
+  transition: 0.2s ease;
+  font-size: 28px;
+  margin-bottom: 26px;
+  display: block;
+}
+.video_storytelling .case-nav a:hover{ opacity: 1; }
+
+.video_storytelling .case-section{
+  margin-bottom: 80px;
+}
+
+.video_storytelling .case-section h2{
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.video_storytelling .sb-duration{
+  margin-top: 8px;
+  margin-bottom: 36px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+
+/* HERO — match Swiss spacing + “framed” media look */
+.video_storytelling .sb-hero__inner{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  column-gap: 200px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 40px;
+}
+
+/* Make video hero media look like Swiss (orange frame card) */
+.video_storytelling .sb-phone{
+  max-width: 680px;          /* Swiss size */
+  margin-left: auto;
+  background: #FFC07A;       /* Swiss frame */
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+  overflow: hidden;          /* keeps corners clean */
+}
+
+/* If your hero uses <img> */
+.video_storytelling .sb-phone img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* If your hero uses <video> instead of img */
+.video_storytelling .sb-phone video{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Kicker — match Swiss */
+.video_storytelling .sb-hero__inner .kicker{
+  font-size: 48px !important;
+  font-weight: 900 !important;
+  color: #FFC07A !important;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+/* PDF/Video embed container — match Swiss */
+.video_storytelling .pdf-embed{
+  margin-top: 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(0,0,0,0.10);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* Keep existing behavior but make consistent */
+.video_storytelling .pdf-embed video,
+.video_storytelling .pdf-embed iframe{
+  width: 100%;
+  border: 0;
+  display: block;
+}
+
+/* If your video page uses iframe sometimes, set same height as Swiss */
+.video_storytelling .pdf-embed iframe{
+  height: 800px;
+}
+
+/* Responsive — match the video one you already had */
+@media (max-width: 900px){
+  .video_storytelling .case-grid{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .video_storytelling .case-sidebar{ display: none; }
+
+  .video_storytelling .sb-hero__inner{
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    gap: 26px;
+  }
+}
+body.video_storytelling .sb-hero,
+body.video_storytelling main.case-wrapper{
+  max-width: 1100px;
+  margin-left: 60px;
+  margin-right: auto;
+}
+.skill-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.skill-card{
+  background: rgba(255,255,255,0.55);
+  border: 2px solid rgba(123,168,255,0.55);
+  border-radius: 32px;
+  padding: 36px 36px 32px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.06);
+  transition: transform 220ms ease,
+              box-shadow 220ms ease,
+              border-color 220ms ease,
+              background 220ms ease;
+}
+
+.skill-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.10);
+  border-color: rgba(255,192,122,0.95);
+  background: rgba(255,192,122,0.16);
+}
+
+.skill-icon{
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  margin-bottom: 18px;
+  background: rgba(123,168,255,0.18);
+  border: 3px solid rgba(123,168,255,0.32);
+}
+/* ORANGE HOVER EFFECT */
+.skill-card{
+  transition: 
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+.skill-card:hover{
+  background-color: #FFC07A;
+  border-color: #FFC07A;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+}
+
+/* Change heading color on hover */
+.skill-card:hover h3{
+  color: #0f172a;
+}
+
+/* Change paragraph color on hover */
+.skill-card:hover p{
+  color: #0f172a;
+}
+
+/* Change icon bubble on hover */
+.skill-card:hover .skill-icon{
+  background: rgba(255,255,255,0.4);
+  border-color: rgba(255,255,255,0.7);
+}
+/* ==========================================
+   GOALS — FULL BOX STYLE
+   ========================================== */
+
+.goal-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.goal-card{
+  background: rgba(255,255,255,0.55);
+  border: 2px solid rgba(123,168,255,0.55);
+  border-radius: 32px;
+  padding: 36px 36px 32px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.06);
+  transition: transform 220ms ease,
+              box-shadow 220ms ease,
+              border-color 220ms ease,
+              background 220ms ease;
+}
+
+.goal-card:hover{
+  background-color: #FFC07A;
+  border-color: #FFC07A;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+}
+
+.goal-icon{
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  background: rgba(123,168,255,0.18);
+  border: 3px solid rgba(123,168,255,0.32);
+}
+
+.goal-card:hover .goal-icon{
+  background: rgba(255,255,255,0.4);
+  border-color: rgba(255,255,255,0.7);
+}
+
+.goal-card h3{
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.goal-card p{
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================
+   VIDEO STORYTELLING SHAPES (same as Pinpal)
+   ========================= */
+
+body.video_storytelling{ position: relative; overflow-x: hidden; }
+
+body.video_storytelling .page-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.video_storytelling .nav,
+body.video_storytelling main,
+body.video_storytelling footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* base */
+body.video_storytelling .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+body.video_storytelling .shape-poly{
+  left: -80px;              /* slightly adjust so it doesn’t look cut off */
+  top: -10px;
+  width: clamp(400px, 45vw, 800px);  /* smaller */
+  opacity: 0.30;
+}
+/* ✅ MOVE EVERYTHING ELSE BELOW THE POLYGON */
+body.video_storytelling .shape-bcircle{
+  left: -25%;
+  right: auto;
+  top: 52%;
+  width: clamp(260px, 38vw, 520px);
+}
+
+body.video_storytelling .shape-brect{
+  right: 80px;
+  top: 62%;
+  width: 320px;
+}
+
+body.video_storytelling .shape-circle{
+  right: 0px;
+  top: 72%;
+  width: 300px;
+}
+
+/* KEEP Rectangle 2 EXACT position */
+body.video_storytelling .shape-rect2{ 
+  position: absolute;
+  left: 34%;   /* ← use the exact values it currently has */
+  top: 85%;
+  width: 220px;
+  animation: none; /* optional: stop floating if you want it fixed */
+  z-index: 1;
+}
+body.video_storytelling .shape-star{
+  left: 280px;
+  top: 77%;
+  width: 180px;
+}
+
+/* animation */
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body.video_storytelling .page-decor .shape{ animation: none !important; }
+}
+/* ==========================================
+   WALMART MOTION 
+   ========================================== */
+
+.walmart_motion .case-wrapper{
+  max-width: 1000px;              /* same as Swiss */
+  margin: 0 auto;
+  padding: 0px 0px 0px;       /* more bottom breathing */
+}
+
+/* Sidebar + content spacing */
+.walmart_motion .case-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 90px;                      /* bigger space like Swiss */
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+/* Paragraph width + readability */
+.walmart_motion .case-content p{
+  max-width: 720px;               /* narrower like Swiss */
+  line-height: 1.85;              /* more breathing */
+  font-size: 18px;
+  margin: 0 0 22px;
+}
+
+/* Section spacing */
+.walmart_motion .case-section{
+  margin-bottom: 80px;            /* bigger vertical spacing */
+}
+
+/* Section headings */
+.walmart_motion .case-section h2{
+  font-size: 44px;                /* match Swiss */
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+/* Sidebar links */
+.walmart_motion .case-nav a{
+  font-size: 28px;                /* match Swiss */
+  margin-bottom: 26px;
+}
+
+/* HERO spacing */
+.walmart_motion .sb-hero__inner{
+  column-gap: 200px;              /* large hero gap like Swiss */
+  padding: 60px 28px 40px;
+}
+
+/* Divider breathing */
+.walmart_motion .divider{
+  margin: 60px 0;                 /* adds space around line */
+}
+/* ==========================================
+   WALMART HERO — LEFT TEXT / RIGHT IMAGE
+   ========================================== */
+
+.walmart_motion .sb-hero__inner{
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important;  /* left / right */
+  align-items: center !important;
+  gap: 80px !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 28px 40px;
+}
+
+/* left block */
+.walmart_motion .sb-hero__left{
+  max-width: 620px;
+}
+
+/* right image block */
+.walmart_motion .sb-phone{
+  max-width: 650px;
+  margin-left: auto;   /* pushes to right */
+}
+
+.walmart_motion .sb-phone img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* mobile: stack */
+@media (max-width: 900px){
+  .walmart_motion .sb-hero__inner{
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  .walmart_motion .sb-phone{
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+/* Make "Motion Graphic" large and orange */
+.walmart_motion .kicker{
+  font-size: 48px;
+  font-weight: 900;
+  color: #FFC07A;     /* same orange as your Swiss accent */
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+/* ==========================================
+   WALMART ONLY — LEFT ALIGN LAYOUT
+   ========================================== */
+
+body.walmart_motion main.case-wrapper{
+  max-width: 1100px;
+  margin-left: 60px;   /* pushes layout more left */
+  margin-right: auto;
+  padding: 70px 0 110px;
+}
+ /* =========================
+   walmart_motion SHAPES 
+   ========================= */
+
+body.walmart_motion{ position: relative; overflow-x: hidden; }
+
+body.walmart_motion .page-decor{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.walmart_motion .nav,
+body.walmart_motion main,
+body.walmart_motion footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* base */
+body.walmart_motion .page-decor .shape{
+  position: absolute;
+  height: auto;
+  opacity: 0.30;
+  animation: sbFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+body.walmart_motion .shape-poly{
+  left: -80px;              /* slightly adjust so it doesn’t look cut off */
+  top: -10px;
+  width: clamp(400px, 45vw, 800px);  /* smaller */
+  opacity: 0.30;
+}
+/* ✅ MOVE EVERYTHING ELSE BELOW THE POLYGON */
+body.walmart_motion .shape-bcircle{
+  left: -25%;
+  right: auto;
+  top: 52%;
+  width: clamp(260px, 38vw, 520px);
+}
+
+body.walmart_motion .shape-brect{
+  right: 80px;
+  top: 62%;
+  width: 320px;
+}
+
+body.walmart_motion .shape-circle{
+  right: 0px;
+  top: 42%;
+  width: 300px;
+}
+
+/* KEEP Rectangle 2 EXACT position */
+body.walmart_motion .shape-rect2{ 
+  position: absolute;
+  left: 34%;   /* ← use the exact values it currently has */
+  top: 85%;
+  width: 220px;
+  animation: none; /* optional: stop floating if you want it fixed */
+  z-index: 1;
+}
+body.walmart_motion .shape-star{
+  left: 1350px;
+  top: 72%;
+  width: 180px;
+}
+
+/* animation */
+@keyframes sbFloat{
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+/* ==========================================
+   WALMART GOALS CARDS
+   ========================================== */
+
+.walmart_motion .vb-section{
+  margin-bottom: 80px;
+}
+
+.walmart_motion .vb-h2{
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  margin: 0 0 28px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.walmart_motion .vb-goals{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.walmart_motion .vb-goal{
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 24px;
+  padding: 28px 28px 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  min-height: 220px;
+}
+
+.walmart_motion .vb-goal:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+  border-color: rgba(255, 192, 122, 0.8);
+}
+
+.walmart_motion .vb-goal__icon{
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 192, 122, 0.22);
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.walmart_motion .vb-goal h3{
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: #0b234a;
+  font-weight: 900;
+}
+
+.walmart_motion .vb-goal p{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #24324a;
+  max-width: 100%;
+}
+
+.walmart_motion .vb-goal--wide{
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px){
+  .walmart_motion .vb-goals{
+    grid-template-columns: 1fr;
+  }
+
+  .walmart_motion .vb-goal--wide{
+    grid-column: auto;
+  }
+
+  .walmart_motion .vb-goal{
+    min-height: auto;
+  }
+}
+/* =========================================
+   FAST DECOR ANIMATION — HOME + ABOUT
+   ========================================= */
+
+body.home  .page-decor .shape,
+body.about .page-decor .shape{
+  animation: decorFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* slightly different speeds so they don’t sync */
+body.home  .page-decor .shape-polygon,
+body.about .page-decor .shape-polygon{ animation-duration: 5.6s; }
+
+body.home  .page-decor .shape-rect,
+body.about .page-decor .shape-rect{ animation-duration: 5.9s; }
+
+body.home  .page-decor .shape-ellipse,
+body.about .page-decor .shape-ellipse{ animation-duration: 5.4s; }
+
+@keyframes decorFloat{
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%     { transform: translateY(-30px) rotate(3deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body.home  .page-decor .shape,
+  body.about .page-decor .shape{
+    animation: none !important;
+  }
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  border-radius: 40px;
+
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+
+  color: white;
+  background: #3B82F6;          
+  border: 2px solid #3B82F6;        
+
+  transition: all 0.3s ease;
+}
+.btn:hover{
+  background: #3B82F6;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.25);
+}
+.btn:active{
+  transform: scale(0.97);
+}
+.btn span{
+  transition: transform 0.3s ease;
+}
+
+.btn:hover span{
+  transform: translateX(5px);
+}
+
+.back-to-top{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: orange;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: all 0.25s ease;
+}
+
+.back-to-top:hover{
+  background: #FFC07A;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.back-to-top.show{
+  display: flex;
+}
+
+
+
